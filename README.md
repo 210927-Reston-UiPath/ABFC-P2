@@ -9,7 +9,7 @@ ABFC Price Checker Automation will let a user input a game name or a wishlist of
 - [ ] Robot should be able to take in a specific Wishlist and give a report on the games you want.
 - [ ] Robot should be able to make a decision on the quality of the price based on historical sale data from www.pricecharting.com.
 - [ ] Robot should be able to email you a PDF with the information requested.
-- [ ] For individual input of games, the robot should be able to also give recomendations of games similar to that title.
+- [ ] For individual games on a client's wishlist, the robot should be able to also give recomendations of games similar to that title.
 
 ## Stretch Goals
 - [ ] Robot should be able to look for if the game has a streaming option or a renting option.
@@ -20,7 +20,7 @@ ABFC Price Checker Automation will let a user input a game name or a wishlist of
 ## Constraints
 - [ ] Robot will shop from Amazon, Steam, BestBuy, Humble Bundle.
 - [ ] Robot will use sales data provided by www.pricecharting.com to make the purchase rating, if the data for the game is avalible. (Some titles might not have data or may not be available to the market yet.)
-- [ ] Database must be in 3NF formatting.
+- [ ] Database must be 3NF.
 - [ ] Orchestrator must be utilized.
 - [ ] ReFramework must be utilized.
 - [ ] Must have 3rd party API/Library integrated.
