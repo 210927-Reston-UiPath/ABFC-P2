@@ -16,6 +16,7 @@ ABFC Price Checker Automation will let a user input a game name or a wishlist of
 - [ ] Robot should be able to look for if there is a used copy that is cheaper than a full price copy.
 - [ ] Based on your wishlist the robot should be able to give you more suggestions on what you might like.
 - [ ] Given the Specs of your hardware or the devices you own, there should a warning or a notice if you can run the game or if you need specific hardware to play the game.
+  - https://www.pcgamebenchmark.com/
 
 ## Constraints
 - [ ] Robot will shop from Amazon, Steam, BestBuy, Humble Bundle.
