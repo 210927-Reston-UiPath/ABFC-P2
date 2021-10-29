@@ -9,7 +9,7 @@ ABFC Price Checker Automation will let a user input a game name or a wishlist of
 - [ ] Robot should be able to take in a specific Wishlist and give a report on the games you want.
 - [ ] Robot should be able to make a decision on the quality of the price based on historical sale data from www.pricecharting.com.
 - [ ] Robot should be able to email you a PDF with the information requested.
-- [ ] For idividual input of game, the robot should be able to also give recomendations of games similar to that title.
+- [ ] For individual input of games, the robot should be able to also give recomendations of games similar to that title.
 
 ## Stretch Goals
 - [ ] Robot should be able to look for if the game has a streaming option or a renting option.
