@@ -4,22 +4,28 @@
 ABFC Price Checker Automation will let a user input a game name or a wishlist of games to recieve a report about their potential purchases. The Robot will check a database to see if the game is already stored, if not it will go to the listed sites and pull the prices. The Robot will then compare the prices and produce a PDF output that will let the user know the price at the best value and if that price is worth paying compared to historical sale data.
 
 ## MVP
-- [ ] Steam, amazon, humble bundle integration for game prices
-- [ ] Wishlist
-- [ ] User input: list of games
-- [ ] Check if each item on wishlist is on sale at various stores
-- [ ] Lowest price vendor at top/highlighted 
-- [ ] Images of Game(cover art) and Summary of purchase options to PDF
-- [ ] All data collected needs to be stored in a DB and saved for future look ups
-- [ ] API integration: 
-- [ ] Provide context for sale price (historical prices)
-https://www.pricecharting.com/
-https://www.pricecharting.com/api-documentation
+- [ ] Robot should be able to pull information from stores and store that to a DataBase.
+- [ ] Robot should allow you to select the platform you wish to play on and only provide data for that platform.
+- [ ] Robot should be able to take in a specific Wishlist and give a report on the games you want.
+- [ ] Robot should be able to make a decision on the quality of the price based on historical sale data from www.pricecharting.com.
+- [ ] Robot should be able to email you a PDF with the information requested.
+- [ ] For idividual input of game, the robot should be able to also give recomendations of games similar to that title.
 
 ## Stretch Goals
-- [ ] Target, bestbuy, gamestop integration for game prices
-- [ ] Gamepass integration for game prices
-- [ ] Wishlisted Games from 1 year ago to today
+- [ ] Robot should be able to look for if the game has a streaming option or a renting option.
+- [ ] Robot should be able to look for if there is a used copy that is cheaper than a full price copy.
+- [ ] Based on your wishlist the robot should be able to give you more suggestions on what you might like.
+- [ ] Given the Specs of your hardware or the devices you own, there should a warning or a notice if you can run the game or if you need specific hardware to play the game.
+
+## Constraints
+- [ ] Robot will shop from Amazon, Steam, BestBuy, Humble Bundle.
+- [ ] Robot will use sales data provided by www.pricecharting.com to make the purchase rating, if the data for the game is avalible. (Some titles might not have data or may not be available to the market yet.)
+- [ ] Database must be in 3NF formatting.
+- [ ] Orchestrator must be utilized.
+- [ ] ReFramework must be utilized.
+- [ ] Must have 3rd party API/Library integrated.
+- [ ] Automations should have exception handling enabled.
+
 
 ## Current Flowchart
 ![Statemachine](https://user-images.githubusercontent.com/55204654/139494965-e969758f-8157-4145-a8cf-154b9addeaf9.PNG)
