@@ -9,7 +9,7 @@ The User should also be provided a link to the store page and to the other pages
 The User should be able to get their friends wishlist or past searches of games if they know their friends username.
 The User should be able to pull all of the games they have looked up in the past and get new news if those games have changed in sale price at all.
 
-## Stretch Goal
+## Stretch Goal User Story
 User should be alerted if the game they want will run or not run on the hardware they own.
 
 ## MVP
