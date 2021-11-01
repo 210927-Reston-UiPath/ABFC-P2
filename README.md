@@ -12,6 +12,9 @@ The User should be able to pull all of the games they have looked up in the past
 ## Stretch Goal User Story
 User should be alerted if the game they want will run or not run on the hardware they own.
 
+## Stretch Goal User Story #2
+A user is looking for a game they want on sale across multiple platforms that they own (PC, PS4, Xbox One). The User should be able to enter in the consoles they own and the game they want, and get provided with the link to the game they want on for the best price that is available across all consoles they own.
+
 ## MVP
 - [ ] Robot should be able to pull information from stores and store that to a DataBase.
 - [ ] Robot should allow you to select the platform you wish to play on and only provide data for that platform.
