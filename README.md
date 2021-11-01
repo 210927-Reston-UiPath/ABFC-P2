@@ -12,7 +12,6 @@ The User should be able to pull all of the games they have looked up in the past
 ## Stretch Goal User Story
 User should be alerted if the game they want will run or not run on the hardware they own.
 
-## Stretch Goal User Story #2
 A user is looking for a game they want on sale across multiple platforms that they own (PC, PS4, Xbox One). The User should be able to enter in the consoles they own and the game they want, and get provided with the link to the game they want on for the best price that is available across all consoles they own.
 
 ## MVP
@@ -28,6 +27,7 @@ A user is looking for a game they want on sale across multiple platforms that th
 - [ ] Robot should be able to look for if there is a used copy that is cheaper than a full price copy.
 - [ ] Based on your wishlist the robot should be able to give you more suggestions on what you might like.
 - [ ] Given the Specs of your hardware or the devices you own, there should a warning or a notice if you can run the game or if you need specific hardware to play the game.
+- [ ] Robot should be able to determine the best price based upon the devices the user has and give them the cheapest option based upon their devices
 
 ## Constraints
 - [ ] Robot will shop from Amazon, Steam, BestBuy, Humble Bundle.
