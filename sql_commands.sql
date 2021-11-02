@@ -44,7 +44,7 @@ create table games (
     primary key (gamelineID)
 );
 
-drop table device cascade; 
+-- drop table device cascade; 
 
 create table Device (
     DevLineID serial,
