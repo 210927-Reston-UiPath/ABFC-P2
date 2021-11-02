@@ -4,10 +4,10 @@
 ABFC Price Checker Automation will let a user input a game name or a wishlist of games to recieve a report about their potential purchases. The Robot will check a database to see if the game is already stored, if not it will go to the listed sites and pull the prices. The Robot will then compare the prices and produce a PDF output that will let the user know the price at the best value and if that price is worth paying compared to historical sale data.
 
 ## User Story
-A user is looking for a game they want on sale. They should be able to give the program what they want and how they intend to play it and get a letter letting them know what store has the best price and if that price is good or not. If that doesn't meet their standards they can also see the suggested games listed to find another game they might be interested in.
-The User should also be provided a link to the store page and to the other pages for the suggested games.
-The User should be able to get their friends wishlist or past searches of games if they know their friends username.
-The User should be able to pull all of the games they have looked up in the past and get new news if those games have changed in sale price at all.
+A user is looking for a game they want on sale. They should be able to give the program what they want and how they intend to play it and get a PDF file letting them know what store has the best price and if that price is good or not. If that doesn't meet their standards they can also see the suggested games listed to find another game they might be interested in.
+- The User should also be provided a link to the store page and to the other pages for the suggested games.
+- The User should be able to get their friends wishlist or past searches of games if they know their friends username.
+- The User should be able to pull all of the games they have looked up in the past and get new news if those games have changed in sale price at all.
 
 ## Stretch Goal User Story
 User should be alerted if the game they want will run or not run on the hardware they own.
