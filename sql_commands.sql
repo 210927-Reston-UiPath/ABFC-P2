@@ -31,6 +31,7 @@ create table games (
     gamename varchar(255) not null,
     gamegenre varchar(255) not null,
     gameprice DECIMAL(13, 2) not null,
+    apiprice DECIMAL(13, 2),
     bestvendor varchar(255) not null,
     link varchar(255) not null,
     primary key (gamelineID)
