@@ -17,6 +17,22 @@ create table clients (
     primary key (clientID)
 );
 
+-- select * from clients;
+-- select clientID from clients where username = 'testusername';
+
+-- select * from device where devicename = 'PS4' and devclientid = 15
+
+-- select * from device
+-- delete from device 
+-- where DevclientID = 14;
+
+-- delete from clients
+-- where clientname = 'testname';
+
+-- where username = 'timothyyu'
+
+-- delete from devices where devicename = "PS4" and DevclientID ='"+clientID+"'"
+
 create table wishlist (
     wishlistID serial not null,
     wishclientID int not null,
@@ -26,14 +42,28 @@ create table wishlist (
     primary key (wishlistID)
 );
 
+
+-- create table games (
+--     gamelineID serial,
+--     gamename varchar(255) not null,
+--     gamegenre varchar(255) not null,
+--     gameprice DECIMAL(13, 2) not null,
+--     apiprice DECIMAL(13, 2),
+--     bestvendor varchar(255) not null,
+--     link varchar(255) not null,
+--     primary key (gamelineID)
+-- );
+
+-- drop table games;
+
 create table games (
     gamelineID serial,
-    gamename varchar(255) not null,
-    gamegenre varchar(255) not null,
-    gameprice DECIMAL(13, 2) not null,
+    gamename varchar(255),
+    gamegenre varchar(255),
+    gameprice DECIMAL(13, 2),
     apiprice DECIMAL(13, 2),
-    bestvendor varchar(255) not null,
-    link varchar(255) not null,
+    bestvendor varchar(255),
+    link varchar(255),
     primary key (gamelineID)
 );
 
