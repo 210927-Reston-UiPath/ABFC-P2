@@ -700,7 +700,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[inputOption = "Enter game name"]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID5" DisplayName="Enter game name" sap:VirtualizedContainerService.HintSize="965.333333333333,2391.33333333333" sap2010:WorkflowViewState.IdRef="State_9">
+                    <State x:Name="__ReferenceID5" DisplayName="Enter game name" sap:VirtualizedContainerService.HintSize="134,61.3333333333333" sap2010:WorkflowViewState.IdRef="State_9">
                       <State.Entry>
                         <Sequence sap:VirtualizedContainerService.HintSize="918.666666666667,2024.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_99">
                           <Sequence.Variables>
@@ -897,39 +897,91 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[inputOption = "Pull friend's history"]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID7" DisplayName="Pull friend's history" sap:VirtualizedContainerService.HintSize="134,61.3333333333333" sap2010:WorkflowViewState.IdRef="State_11">
+                    <State x:Name="__ReferenceID7" DisplayName="Pull friend's history" sap:VirtualizedContainerService.HintSize="965.333333333333,1692.66666666667" sap2010:WorkflowViewState.IdRef="State_11">
                       <State.Entry>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,726.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_101">
+                        <Sequence sap:VirtualizedContainerService.HintSize="918.666666666667,1326" sap2010:WorkflowViewState.IdRef="Sequence_101">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="testString2" />
                             <Variable x:TypeArguments="x:String" Name="username2" />
                             <Variable x:TypeArguments="sd:DataTable" Name="queryDT7" />
+                            <Variable x:TypeArguments="x:Boolean" Name="inputfriendusername" />
                           </Sequence.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_25" IsPassword="False" Label="Enter in friend's username to pull history:">
-                            <ui:InputDialog.Result>
-                              <OutArgument x:TypeArguments="x:String">[username2]</OutArgument>
-                            </ui:InputDialog.Result>
-                          </ui:InputDialog>
-                          <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_30">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[username2]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[username2]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT7]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_54" Sql="[&quot;Select clients.username,games.gamename From wishlist inner Join games On wishlist.wishgameID = games.gamelineID inner Join clients On wishlist.wishclientID = clients.clientID Where clients.username = '&quot;+username2+&quot;'&quot;]">
-                            <ui:ExecuteQuery.Parameters>
-                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                            </ui:ExecuteQuery.Parameters>
-                          </ui:ExecuteQuery>
-                          <ui:OutputDataTable DataTable="[queryDT7]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_6" Text="[testString2]" />
-                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[testString2]" />
+                          <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="876.666666666667,1234" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_5">
+                            <ui:InterruptibleDoWhile.Body>
+                              <Sequence sap:VirtualizedContainerService.HintSize="840,1066" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="798,242" sap2010:WorkflowViewState.IdRef="InputDialog_25" IsPassword="False" Label="Enter in friend's username to pull history:">
+                                  <ui:InputDialog.Result>
+                                    <OutArgument x:TypeArguments="x:String">[username2]</OutArgument>
+                                  </ui:InputDialog.Result>
+                                </ui:InputDialog>
+                                <If Condition="[username2 is Nothing]" sap:VirtualizedContainerService.HintSize="798,692" sap2010:WorkflowViewState.IdRef="If_51">
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,252" sap2010:WorkflowViewState.IdRef="Sequence_118">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[&quot;No username entered.&quot;]" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_48">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[inputfriendusername]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,542.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[username2]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[username2]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT7]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_57" Sql="[&quot;Select clients.username,games.gamename From wishlist inner Join games On wishlist.wishgameID = games.gamelineID inner Join clients On wishlist.wishclientID = clients.clientID Where clients.username = '&quot;+username2+&quot;'&quot;]">
+                                        <ui:ExecuteQuery.Parameters>
+                                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                        </ui:ExecuteQuery.Parameters>
+                                      </ui:ExecuteQuery>
+                                      <ui:OutputDataTable DataTable="[queryDT7]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_7" Text="[testString2]" />
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[testString2]" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[inputfriendusername]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </ui:InterruptibleDoWhile.Body>
+                            <ui:InterruptibleDoWhile.Condition>
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="inputfriendusername = True" />
+                            </ui:InterruptibleDoWhile.Condition>
+                          </ui:InterruptibleDoWhile>
                         </Sequence>
                       </State.Entry>
                       <sap:WorkflowViewStateService.ViewState>
