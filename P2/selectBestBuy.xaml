@@ -1,0 +1,272 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.currPlatform="PlayStation 5" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="currentGame" Type="InArgument(x:String)" />
+    <x:Property Name="currPlatform" Type="InArgument(x:String)" />
+    <x:Property Name="getPrice" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <this:Main.currentGame>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.currentGame>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>859,2900</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="88">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="556,2795" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Best Buy | Official Online Store | Shop Now &amp; Save" sap:VirtualizedContainerService.HintSize="514,2703" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,2487" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="PlayStation 5" Name="getPlatform" />
+              <Variable x:TypeArguments="x:String" Default="$69.99" Name="getCurrPrice" />
+              <Variable x:TypeArguments="x:String" Default="pricing-price-*" Name="somePrice" />
+              <Variable x:TypeArguments="ui:UiElement" Name="highlightedValue" />
+              <Variable x:TypeArguments="x:String" Default="final fantasy vii - Best Buy" Name="bestBuy" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="438,536" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Have Tried with changing the values for which platform and game all of them are set to lower case due to the titles in html header to search some games also do not have an easy to access price.&#xA;&#xA;Game found that has Issues: Super Mario 3D World + Bowser's Fury , Super Smash Bros. Ultimate due to no price that is easily accessible especially unless you add to cart to grab price.&#xD;&#xA;&#xD;&#xA;Games that have issues is some preorder games (Battlefield 2042), different buttons and some wierd price format i cant grab(?)&#xD;&#xA;&#xD;&#xA;When clicking on the image icon to go directly to a certain game page, the add to cart button layout is changed, so program tends to break alot. Some games page has &#xA;&#xA;Tried Games with associated platform that works on the stable build on github:&#xA;&#xA;PlayStation 4 or 5 :final fantasy vii,monster hunter, spider-man,horizon zero dawn, god of war&#xA;&#xA;Nintendo Switch: Mario Kart,Fire Emblem three Houses&#xA;&#xA;Xbox One Digital: Halo 5&#xA;&#xA;other platforms best buy has Xbox One,PS4, Xbox Series X|S&#xA;other constraints Nintendo Switch (Games or Digital)" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,230" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[currentGame]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Halo 5".ToLower]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,230" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[currPlatform]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Xbox One</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <Assign sap:VirtualizedContainerService.HintSize="438,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[bestBuy]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[currentGame+" - Best Buy"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  gh-search-input'" sap:VirtualizedContainerService.HintSize="438,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[currentGame+ &quot;[k(enter)]&quot;]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c4e43559-f0ef-4ac2-90a7-a49f25aa09a0" InformativeScreenshot="a42bd54ed4e5a92438630fca556e62e2" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,322" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <uix:NClick ClickType="Single" DisplayName="Click 'PlayStation 5'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&amp;st=final+fantasy+vii" DesignTimeRectangle="229, 578, 79, 16" ElementType="Text" FriendlyName="'PlayStation 5'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;fieldset&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;span&amp;gt;a&amp;gt;span' parentid='main-filters' parentname='Compatible Platform' tag='SPAN' /&gt;&quot;, currPlatform)]" FuzzySelectorArgument="&lt;webctrl aaname='PlayStation 5' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;fieldset&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;span&amp;gt;a&amp;gt;span' parentid='main-filters' parentname='Compatible Platform' tag='SPAN' type='' check:text='PlayStation 5' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAUCAYAAADx7wHUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIySURBVFhH7ZSxSgRBEET9EUMz/8PIyFATDRQ00EDBxMDAwEAwMBAEwUAQBEHwL0S/QDRTIy+8cOQtV0tds3vuHeN5eFsw7Ox0T0119ezOpBbZ0JqZEa2ZGdGamRGtmRnRyMxut5uOjk/Sy+tbb2XygMb9g8N0enbeWxk/SjMfn57T7Nx837i7fyhiucz86nTSytpGyc+cNQEj0NEE42xwlTc0Dg2OPjM9QYWznkM4HPC7WfHMSTWTS6WLNQi1ZgKKgyQKjzdMnxZPzYEMhIM9zP0mgvePz2KwT3x+Y9mr9YXFpUKDeLUu3bHoqr0C511cXvXVUdfIyFuHkW4mQkTusWgYa8TIYRDzMyLg9YLYv7WzV/IRU7OiJuBFk+tNIW95db3Mh8fjsX4HnNc3t0VDqhojDP3PZC4BgLlMB260FyfEczwezYTbiyNXBbsmQecRI8+5ADE1w3UCzmKP1yaQ60bD640QBn7mQhTO07tExyWcGLkchIgqcQKx2IhoAGsyfnN7t5GZ8HKjPQbghg/wbGpmBGeTG7UObWYUGon1jlgJB3X8XhRzF8h6HYdrEmRm1CQ4n58L/sRMhv/HeOd2OjHz+F8h328hIB7/Y15g1bubGQsiV/ms+6f401l1Zkq35zKv8mqkzxwyfXoYy4gmkR+5JEx7o+FwsC4TYr6bCaRDa7x70eJjxLOamgngJiYub5KjNDMnEOrmTguym4mJdZ377/iVmzmtaM3MiNbMbEjpG21iKm5pO98zAAAAAElFTkSuQmCC" InformativeScreenshot="1000400418e186c951214a28cfb1c622.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='final fantasy vii - Best Buy' /&gt;" SearchSteps="Selector" Text="PlayStation 5" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="201, 542, 149, 21" FriendlyName="'Compatible Platform'" FullSelectorArgument="&lt;webctrl parentname='Compatible Platform' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='Compatible Platform' tag='H3' type='' aaname='Compatible Platform' check:text='Compatible Platform' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJkAAAAZCAYAAAAi7IxiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOLSURBVGhD7Za9ihRREIV9EUMz38PIyNTIxFcwMfANDAx8AUEQBMFEBAMRE3FBY9HQjdxww9bT8A1nz9Sd6RXb2V3qg8Lt23WrTv304LWpaVaml6xZnV6yZnV6yZrV2Vqy09PT6cHDR9P1Gzc3pmedXwUeP3k61/Tp89H8/PLV6/lZ/474dXIy3b13fzb9/TeQJ83zLtGylG/ff0y3bt+Z46nmQ3JmydR4b4CbBEv4ZYGPxXX7B8Qglwx2zSWTsQRLtCT50Qj0ZvxDsVkyF+a/XD6Yy/SLVi1Zxf9eMh84HzVx/9WS8St2Uea1WTIKrBqZzQAKxLw5Phjd56c7GyrzZozuybyRAl0ZhwWr3qEZrejQv17PSJPX7zUQYwS+vmTE5UNwLYAPOfyjyf7L7+jL1zM9k3nOvJOaef/+w8e5B9k3zrmvGbDUenZ9MC+ZD8UFJfJT0e6fhqhszj6j2H33WLRcMEz5T/7ESH3oolnkY7CVZS0y/S1yWFgODcjj/aUG4uJDjFEvGGRqkO9oyZbMTGTM7NsS83hia8lGTXKyOcIbovf5LHwx8gxhfs+1UGQWTRzuoYma8sviHrEZLPeEf5mKn7F5780kn8dxyFOZNLkP2ugN70XWnc+i0kcs10ddVbysg3O0+N08y56f65cMSEgzwJtEQhdbFZ9n1T2BX56TE+M9NWXBqd01O+6XmjKnW+aD0R3Pi4+fCWr3e+ddsiUzE1U8kedVf0c93/o/mQsDL1JJlgjOwYiq+Dyr7gn8qkFX+UYFp3bX7LhfxubOyHJAgjuKOyK1eN/pTw47n0XV56wbMmcVT+R51d9RzzdL5gUpIHBR54hWIj3TdOH39T4H4z5efJ5xT3G8ITRDfj+Pj4exORsVnM0mrsdyDVUtVR37II/3NsEHbaPB+ln6iEqf3svP68RvXzwx0uL9HfV8s2SCIiurglV+NDEHI6ri84x7VWyZityV3/PRGD/njEHuqjk1jWKn5YAEeehPBT5LtJHDfZhR1eddPXNN1LXakolqyC7WyUbTHFENpio+z/yeCtI74nvh3OPdm7fvhvn0nnM05yCfPX8xayCea6xqEbkE+d7B1wea4IM2hkZ83c1ho01nqlU1V32GXTMTGR/yHG3kHJ2JrSU7NKOBNpeXXrJmdXrJmtW5cEvWXD16yZrV6SVrVqeXrFmdXrJmdXrJmtXpJWtWZpp+AzwJdXZTfJQMAAAAAElFTkSuQmCC" SearchSteps="Selector" Text="Compatible Platform" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='H3' type='' /&gt;" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Cant find compatible platform&quot;]" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,393" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <uix:NClick ClickType="Single" DisplayName="Click 'PlayStation 5'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&amp;qp=platform_facet%3DCompatible%20Platform~PlayStation%205&amp;st=final+fantasy+vii" DesignTimeRectangle="201, 504, 79, 16" ElementType="Text" FriendlyName="'PlayStation 5'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' parentid='main-filters' parentname='Category' tag='SPAN' /&gt;&quot;, currPlatform)]" FuzzySelectorArgument="&lt;webctrl aaname='PlayStation 5' parentid='main-filters' parentname='Category' tag='SPAN' type='' check:text='PlayStation 5' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAUCAYAAADx7wHUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIxSURBVFhH7ZQxSgRBFET3EN5BjyAeQU+wF1BzxdjAyEwwNzU1ExOjDRQRMTAQXDDSQAxEEUFoecPWUPuZWcelXRd3Cprp6f+7un79numkFtnQmpkRrZkZ0ZqZEa2ZGdHIzNf3z9TdvU5X/ZfByvQBjcvbl2l9/2awMnmUZh5fPKXOysnQ2Du6L2K5zHx8/kgLa72SnzlrAkagowkm2eAqb2gcGhxDZnqCCmc9h3A44Hez4pnTaiaXShdrFGrNBBQHSRQeb5g+LZ6aAxkIB3uY+00Edw9vxWCf+PzGslfrc93TQoN4tS7dseiqvQLnbR3cDtVR18jIW4exbiZCRO6xaBhrxMhhEPMzIuD1gti/tHle8hFTs6Im4EWT600hb361V+bD4/FYvwPOncN+0ZCqxgg//mcylwDAXKYDN9qLE+I5Ho9mwu3FkauCXZOg84iR51yAmJrhOgFnscdrE8h1o+H1RggjP3MhCufpXaLjEk6MXA5CRJU4gVhsRDSANRm/uHHWyEx4udEeA3DDB3g2NTOCs8mNWn9sZhQaifWOWAkHdfxeFHMXyHodh2sSZGbUJDifnwv+xEyG/8d453Y6MfP4XyHfbyEgHv9jXmDVu5sZCyJX+az7p/jdWXVmSrfnMq/yaqzPHDJ9ehjLiCaRH7kkTHuj4XCwLhNivpsJpENrvHvR4mPEs5qaCeAmJi5vkqM0MycQ6ubOCrKbiYl1nfvv+JWbOatozcyI1sxsSOkLGbVermmQ86EAAAAASUVORK5CYII=" InformativeScreenshot="27c7ced312b008038f9bb80d1d399fef.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='final fantasy vii - Best Buy' /&gt;" SearchSteps="Selector" Text="PlayStation 5" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="201, 444, 321, 26" FriendlyName="'Category'" FullSelectorArgument="&lt;webctrl parentname='Category' tag='LEGEND' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='Category' tag='LEGEND' type='' aaname='' check:text='Category' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUUAAAAeCAYAAAC7SgzdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKJSURBVHhe7dgxbhNBHIVxLkJJxz2oqGipaLgCDQU3oKDgFEhINAgpgoIqggoUChRyAixXLpe8JS96+XtmrYQITOb7SaN4d2d3x82ncW5NAIDp4+GXab1eT0QRAE4RRQAIRBEAQjeKm81mevL02XT7zt3zoWOdB4CbqhnFw0+fL8Qwx737D6bvxz/OZu7mZz1/8fLsDADsr60o/lytpoePHs8hy51h7hwvs2MkigD+J1tRfPX6zRwxhVGBTA5cXsuIauROsrXj1DlTKHvXpN7/9t3B/K66Nr1P7/W8et3fSX/1Tl0/eP9hPld3vp5LxIExXYhi7gaXoqB5ik4NoodD04tivqd1XVr3emT0lub5WQ6dh+93lHVdvK4aVQDj6EbRoVjiIGVAHZoat5zTOufA6v2r08+tdfg+R6u3XkdQ1zTHx3VX6B2m5/k41wVgLFfaKVaOie7zWIqiPufcHAre8cnJ/LdGzOtzFP1eH5sD6/OOYoZT8vtqnV6X1w5gPN3/KXr3lDJ+Ckcee34Ny2WjqOd9Pfp2HqsMmZ91XVEUP9OxbX1vAOPYimKGLkOWu6peAHPOUhRb5yqHrDUcu3xfBs/r8jqXopjP6M0BMI6tKMpSkBRMhXPXPEcxI6uhe2qIcuTzHU+f13HuAOucHK119oLn63kPgDE1oyj+CZqh8c7Laty0Q6u7R/E5jQxTnteoz6/qz2Kr4a3Xd0XRYdV6AIytG8V/KWObIXPcavT+VCvkAMa0l1GU3s9ijd6O7yp6u08AY9rbKEorjNe9m/Puk5/OAGSvowgAfxtRBIBAFAEgEEUACEQRAAJRBIBAFAEgEEUACEQRAAJRBIBAFAEgEEUACL+juJ5+ARBT29tFOmvGAAAAAElFTkSuQmCC" SearchSteps="Selector" Text="Category" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='LEGEND' type='' /&gt;" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Category Platform not Found&quot;]" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fcbf0cbb-dd9c-4220-8ea1-dfb8aa71a8c9" InformativeScreenshot="f2090f736a8e1460dca406513564e075" Selector="&lt;html app='chrome.exe' title='{{bestBuy}}' /&gt;&lt;webctrl parentid='pricing-price-*' idx='18' /&gt;" TimeoutMS="1000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[getPrice]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="438,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[getPrice]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp BrowserType="Chrome" IconBase64="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" InformativeScreenshot="a4c2c03d7fd578146cade1cff28f7408.png" Selector="&lt;html app='chrome.exe' title='Best Buy | Official Online Store | Shop Now &amp;amp; Save'/&gt;" Url="https://www.bestbuy.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
