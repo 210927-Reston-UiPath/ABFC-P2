@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1486,3187</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1486,2541</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="90">
@@ -103,19 +103,19 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="977,3122" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence sap:VirtualizedContainerService.HintSize="602,2476" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Best Buy | Official Online Store | Shop Now &amp; Save" sap:VirtualizedContainerService.HintSize="935,3030" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Best Buy | Official Online Store | Shop Now &amp; Save" sap:VirtualizedContainerService.HintSize="560,2384" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="901,2814" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,2168" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="PlayStation 5" Name="getPlatform" />
               <Variable x:TypeArguments="x:String" Default="$69.99" Name="getCurrPrice" />
@@ -135,16 +135,24 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Comment sap:VirtualizedContainerService.HintSize="859,536" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Have Tried with changing the values for which platform and game all of them are set to lower case due to the titles in html header&#xA;some games also do not have an easy to access price&#xA;&#xA;Some games that are pre-orderable also can have issues with getting price for some reason (Battlefield 2042) . Game found that has Issues with non existant prices that has passed in as a empty? a null? a 0? where the price should be: Super Mario 3D World + Bowser's Fury , Super Smash Bros. Ultimate&#xA;&#xA;Another Issue, a games price can be found if they follow a format, ie: there is a &quot;Price Match Guarantee&quot; above the price I want to get, games that do not have this, can not get price (Halo 5 / Battlefield 2042)&#xA;&#xA;Tried Games with associated platform and gotten prices for the following&#xA;&#xA;PlayStation 4 or 5 :final fantasy vii,monster hunter, spider-man,horizon zero dawn, god of war&#xA;&#xA;Nintendo Switch: Mario Kart,Fire Emblem three Houses&#xA;&#xA;Xbox One Digital: Halo 5&#xA;&#xA;other platforms best buy has Xbox One,PS4, Xbox Series X|S&#xA;other constraints Nintendo Switch (Games or Digital)" />
-            <Assign sap:VirtualizedContainerService.HintSize="859,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <ui:Comment sap:VirtualizedContainerService.HintSize="484,536" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Have Tried with changing the values for which platform and game all of them are set to lower case due to the titles in html header&#xA;some games also do not have an easy to access price&#xA;&#xA;Some games that are pre-orderable also can have issues with getting price for some reason (Battlefield 2042) . Game found that has Issues with non existant prices that has passed in as a empty? a null? a 0? where the price should be: Super Mario 3D World + Bowser's Fury , Super Smash Bros. Ultimate&#xA;&#xA;Another Issue, a games price can be found if they follow a format, ie: there is a &quot;Price Match Guarantee&quot; above the price I want to get, games that do not have this, can not get price (Halo 5 / Battlefield 2042)&#xA;&#xA;Tried Games with associated platform and gotten prices for the following&#xA;&#xA;PlayStation 4 or 5 :final fantasy vii,monster hunter, spider-man,horizon zero dawn, god of war&#xA;&#xA;Nintendo Switch: Mario Kart,Fire Emblem three Houses&#xA;&#xA;Xbox One Digital: Halo 5&#xA;&#xA;other platforms best buy has Xbox One,PS4, Xbox Series X|S&#xA;other constraints Nintendo Switch (Games or Digital)" />
+            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[currentGame]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">["fire emblem three houses".ToLower]</InArgument>
+                <InArgument x:TypeArguments="x:String">["battlefield 2042".ToLower]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[currentGame.contains(&quot;[&quot;)or currentGame.contains(&quot;]&quot;)]" sap:VirtualizedContainerService.HintSize="859,210" sap2010:WorkflowViewState.IdRef="If_2">
+            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[currPlatform]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">Xbox One</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[currentGame.contains(&quot;[&quot;)or currentGame.contains(&quot;]&quot;)]" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_14">
                   <Assign.To>
@@ -156,17 +164,9 @@
                 </Assign>
               </If.Then>
             </If>
-            <Assign sap:VirtualizedContainerService.HintSize="859,61" sap2010:WorkflowViewState.IdRef="Assign_2">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[currPlatform]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">Nintendo Switch</InArgument>
-              </Assign.Value>
-            </Assign>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="859,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[currentGame]" />
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="859,61" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[currPlatform]" />
-            <Assign sap:VirtualizedContainerService.HintSize="859,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[currentGame]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[currPlatform]" />
+            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_10">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[bestBuy]</OutArgument>
               </Assign.To>
@@ -174,7 +174,7 @@
                 <InArgument x:TypeArguments="x:String">[currentGame+" - Best Buy"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  gh-search-input'" sap:VirtualizedContainerService.HintSize="859,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[currentGame+ &quot;[k(enter)]&quot;]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  gh-search-input'" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[currentGame+ &quot;[k(enter)]&quot;]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c4e43559-f0ef-4ac2-90a7-a49f25aa09a0" InformativeScreenshot="a42bd54ed4e5a92438630fca556e62e2" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -186,7 +186,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'A '" sap:VirtualizedContainerService.HintSize="859,106" sap2010:WorkflowViewState.IdRef="GetValue_16">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'A '" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_16">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81774c0e-9793-4378-b167-3dd783ddada2" InformativeScreenshot="a39f59df6f96d65afcb588fe73f189af" Selector="&lt;html app='chrome.exe' title='{{bestBuy}}' /&gt;&lt;webctrl parentid='shop-sku-list-item-*' tag='A' idx='2' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -201,77 +201,128 @@
                 <OutArgument x:TypeArguments="x:String">[GetTitle]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="859,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[GetTitle]" />
-            <If Condition="[GetTitle.contains(&quot;Blu-ray&quot;) or GetTitle.contains(&quot;DVD&quot;)or GetTitle.contains(&quot;VINYL&quot;)]" sap:VirtualizedContainerService.HintSize="859,969" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[GetTitle+ &quot;Title Contains Blu-Ray/DVD/VINYL, They are not a games&quot;]" />
-              </If.Then>
-              <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="480,820" sap2010:WorkflowViewState.IdRef="Sequence_69">
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[GetTitle]" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,322" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+              <TryCatch.Try>
+                <If Condition="[GetTitle.contains(&quot;Blu-ray&quot;) or GetTitle.contains(&quot;DVD&quot;)or GetTitle.contains(&quot;VINYL&quot;)]" sap:VirtualizedContainerService.HintSize="985,1439" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[GetTitle+ &quot;Title Contains Blu-Ray/DVD/VINYL, They are not a games&quot;]" />
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="606,1290" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,333" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                        <TryCatch.Try>
+                          <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7e4b0567-0121-4a87-92a4-86fe1a96cbfe" InformativeScreenshot="8e3d8747f8f1aeef4e054991e024e52a" Selector="&lt;html app='chrome.exe' title='{{bestBuy}}' /&gt;&lt;webctrl aaname='{{currPlatform}}' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;fieldset&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;span&amp;gt;a&amp;gt;span' parentid='main-filters' parentname='Compatible Platform' tag='SPAN' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Could not easily find Compatible Platform&quot;]" />
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,677" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                        <TryCatch.Try>
+                          <Sequence sap:VirtualizedContainerService.HintSize="526,450" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fcbf0cbb-dd9c-4220-8ea1-dfb8aa71a8c9" InformativeScreenshot="f2090f736a8e1460dca406513564e075" Selector="&lt;html app='chrome.exe' title='{{bestBuy}}' /&gt;&lt;webctrl parentid='pricing-price-*' idx='18' /&gt;" TimeoutMS="1000">
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[getPrice]</OutArgument>
+                              </ui:GetValue.Value>
+                            </ui:GetValue>
+                            <If Condition="[getPrice.Length &lt; 20]" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If.Then>
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[getPrice]" />
+                              </If.Then>
+                            </If>
+                          </Sequence>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="530,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:InvalidOperationException">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
+                              </ActivityAction.Argument>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Price is not detected&quot;]" />
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                      <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'chrome.exe the'" sap:VirtualizedContainerService.HintSize="564,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="11e30d58d77f9f424623149a84bd1906" WaitForReady="INTERACTIVE" />
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_6">
-                    <TryCatch.Try>
-                      <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7e4b0567-0121-4a87-92a4-86fe1a96cbfe" InformativeScreenshot="8e3d8747f8f1aeef4e054991e024e52a" Selector="&lt;html app='chrome.exe' title='{{bestBuy}}' /&gt;&lt;webctrl aaname='{{currPlatform}}' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;fieldset&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;span&amp;gt;a&amp;gt;span' parentid='main-filters' parentname='Compatible Platform' tag='SPAN' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                    </TryCatch.Try>
-                    <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ActivityAction x:TypeArguments="s:Exception">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                          </ActivityAction.Argument>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Could not easily find Compatible Platform&quot;]" />
-                        </ActivityAction>
-                      </Catch>
-                    </TryCatch.Catches>
-                  </TryCatch>
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
-                    <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fcbf0cbb-dd9c-4220-8ea1-dfb8aa71a8c9" InformativeScreenshot="f2090f736a8e1460dca406513564e075" Selector="&lt;html app='chrome.exe' title='{{bestBuy}}' /&gt;&lt;webctrl parentid='pricing-price-*' idx='18' /&gt;" TimeoutMS="1000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:GetValue.Target>
-                    <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[getPrice]</OutArgument>
-                    </ui:GetValue.Value>
-                  </ui:GetValue>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="438,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[getPrice]" />
-                  <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'chrome.exe the'" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="11e30d58d77f9f424623149a84bd1906" WaitForReady="INTERACTIVE" />
-                </Sequence>
-              </If.Else>
-            </If>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Clearly not a Game&quot;]" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
