@@ -378,15 +378,15 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[addremoveinput = "Add device"]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID9" DisplayName="Add device" sap:VirtualizedContainerService.HintSize="134,61.3333333333333" sap2010:WorkflowViewState.IdRef="State_13">
+                            <State x:Name="__ReferenceID9" DisplayName="Add device" sap:VirtualizedContainerService.HintSize="959.333333333333,2803.33333333333" sap2010:WorkflowViewState.IdRef="State_13">
                               <State.Entry>
-                                <Sequence sap:VirtualizedContainerService.HintSize="805.333333333333,1650.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_137">
+                                <Sequence sap:VirtualizedContainerService.HintSize="912.666666666667,2434" sap2010:WorkflowViewState.IdRef="Sequence_137">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="763.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                  <Assign sap:VirtualizedContainerService.HintSize="870.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_52">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:Boolean">[run2]</OutArgument>
                                     </Assign.To>
@@ -394,9 +394,9 @@
                                       <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <If Condition="[addremoveinput= &quot;Add device&quot;]" sap:VirtualizedContainerService.HintSize="763.333333333333,1456.66666666667" sap2010:WorkflowViewState.IdRef="If_59">
+                                  <If Condition="[addremoveinput= &quot;Add device&quot;]" sap:VirtualizedContainerService.HintSize="870.666666666667,2240" sap2010:WorkflowViewState.IdRef="If_59">
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="617.333333333333,1302.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_136">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="724.666666666667,2086" sap2010:WorkflowViewState.IdRef="Sequence_136">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="testString2" />
                                         </Sequence.Variables>
@@ -405,25 +405,25 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:InterruptibleWhile Condition="[run2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="575.333333333333,1210.66666666667" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_12">
+                                        <ui:InterruptibleWhile Condition="[run2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="682.666666666667,1994" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_12">
                                           <ui:InterruptibleWhile.Body>
-                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.666666666667,1041.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_135">
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="646,1824.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_135">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InputDialog Options="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="496.666666666667,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_28" IsPassword="False" Label="Add Device: " OptionsString="PS4;PS5;Xbox One;Xbox One Series X;Switch;PC;Done adding devices">
+                                              <ui:InputDialog Options="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="604,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_28" IsPassword="False" Label="Add Device: " OptionsString="PlayStation 4;PlayStation 5;Xbox One;Xbox Series X;Nintendo Switch;PC;Done adding devices">
                                                 <ui:InputDialog.Result>
                                                   <OutArgument x:TypeArguments="x:String">[deviceadd]</OutArgument>
                                                 </ui:InputDialog.Result>
                                               </ui:InputDialog>
-                                              <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT3]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="496.666666666667,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_59" Sql="[&quot;select clientID from clients where username = '&quot;+username+&quot;'&quot;]">
+                                              <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT3]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="604,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_59" Sql="[&quot;select clientID from clients where username = '&quot;+username+&quot;'&quot;]">
                                                 <ui:ExecuteQuery.Parameters>
                                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                 </ui:ExecuteQuery.Parameters>
                                               </ui:ExecuteQuery>
-                                              <Assign sap:VirtualizedContainerService.HintSize="496.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                              <Assign sap:VirtualizedContainerService.HintSize="604,62" sap2010:WorkflowViewState.IdRef="Assign_53">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:Int32">[clientid]</OutArgument>
                                                 </Assign.To>
@@ -431,7 +431,7 @@
                                                   <InArgument x:TypeArguments="x:Int32">[cint(queryDT3.rows(0).Item("clientID"))]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:FilterDataTable DataTable="[queryDT3]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="496.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_9" OutputDataTable="[queryDT3]" SelectColumnsMode="Keep">
+                                              <ui:FilterDataTable DataTable="[queryDT3]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="604,58.6666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_9" OutputDataTable="[queryDT3]" SelectColumnsMode="Keep">
                                                 <ui:FilterDataTable.Filters>
                                                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                                     <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -443,8 +443,8 @@
                                                   </scg:List>
                                                 </ui:FilterDataTable.SelectColumns>
                                               </ui:FilterDataTable>
-                                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[deviceadd]" sap:VirtualizedContainerService.HintSize="496.666666666667,282" sap2010:WorkflowViewState.IdRef="Switch`1_16">
-                                                <Sequence x:Key="PS4" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[deviceadd]" sap:VirtualizedContainerService.HintSize="604,1065.33333333333" sap2010:WorkflowViewState.IdRef="Switch`1_16">
+                                                <Sequence x:Key="PlayStation 4" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_124">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                                                   </Sequence.Variables>
@@ -454,7 +454,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_35" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_60" Sql="[&quot;select * from device where devicename = 'PS4' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_60" Sql="[&quot;select * from device where devicename = 'PlayStation 4' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                                                     <ui:ExecuteQuery.Parameters>
                                                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                     </ui:ExecuteQuery.Parameters>
@@ -467,13 +467,13 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PS4&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_64" />
+                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PlayStation 4&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_64" />
                                                         <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_34" TableName="device" />
                                                       </Sequence>
                                                     </If.Then>
                                                   </If>
                                                 </Sequence>
-                                                <Sequence x:Key="PS5" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                                                <Sequence x:Key="PlayStation 5" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_126">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                                                   </Sequence.Variables>
@@ -483,7 +483,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_36" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_61" Sql="[&quot;select * from device where devicename = 'PS5' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_61" Sql="[&quot;select * from device where devicename = 'PlayStation 5' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                                                     <ui:ExecuteQuery.Parameters>
                                                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                     </ui:ExecuteQuery.Parameters>
@@ -496,7 +496,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PS5&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_65" />
+                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PlayStation 5&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_65" />
                                                         <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_35" TableName="device" />
                                                       </Sequence>
                                                     </If.Then>
@@ -531,7 +531,7 @@
                                                     </If.Then>
                                                   </If>
                                                 </Sequence>
-                                                <Sequence x:Key="Xbox One Series X" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_130">
+                                                <Sequence x:Key="Xbox Series X" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_130">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                                                   </Sequence.Variables>
@@ -541,7 +541,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_38" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_63" Sql="[&quot;select * from device where devicename = 'Xbox One Series X' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_63" Sql="[&quot;select * from device where devicename = 'Xbox  Series X' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                                                     <ui:ExecuteQuery.Parameters>
                                                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                     </ui:ExecuteQuery.Parameters>
@@ -554,13 +554,13 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Xbox One Series X&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_67" />
+                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Xbox Series X&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_67" />
                                                         <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_37" TableName="device" />
                                                       </Sequence>
                                                     </If.Then>
                                                   </If>
                                                 </Sequence>
-                                                <Sequence x:Key="Switch" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_132">
+                                                <Sequence x:Key="Nintendo Switch" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_132">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                                                   </Sequence.Variables>
@@ -570,7 +570,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_39" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_64" Sql="[&quot;select * from device where devicename = 'Switch' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_64" Sql="[&quot;select * from device where devicename = 'Nintendo Switch' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                                                     <ui:ExecuteQuery.Parameters>
                                                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                     </ui:ExecuteQuery.Parameters>
@@ -583,13 +583,13 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Switch&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_68" />
+                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Nintendo Switch&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_68" />
                                                         <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_38" TableName="device" />
                                                       </Sequence>
                                                     </If.Then>
                                                   </If>
                                                 </Sequence>
-                                                <Sequence x:Key="PC" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_134">
+                                                <Sequence x:Key="PC" sap:VirtualizedContainerService.HintSize="564,697.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_134">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                                                   </Sequence.Variables>
@@ -671,9 +671,9 @@
                           <Transition.To>
                             <State x:Name="__ReferenceID10" DisplayName="Remove device" sap:VirtualizedContainerService.HintSize="134,61.3333333333333" sap2010:WorkflowViewState.IdRef="State_14">
                               <State.Entry>
-                                <If Condition="[addremoveinput = &quot;Remove device&quot;]" sap:VirtualizedContainerService.HintSize="763.333333333333,1446" sap2010:WorkflowViewState.IdRef="If_60">
+                                <If Condition="[addremoveinput = &quot;Remove device&quot;]" sap:VirtualizedContainerService.HintSize="763.333333333333,1593.33333333333" sap2010:WorkflowViewState.IdRef="If_60">
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="617.333333333333,1292" sap2010:WorkflowViewState.IdRef="Sequence_139">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="617.333333333333,1439.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_139">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -687,15 +687,15 @@
                                           <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:InterruptibleWhile Condition="[run3]" DisplayName="While" sap:VirtualizedContainerService.HintSize="575.333333333333,1098" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_13">
+                                      <ui:InterruptibleWhile Condition="[run3]" DisplayName="While" sap:VirtualizedContainerService.HintSize="575.333333333333,1245.33333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_13">
                                         <ui:InterruptibleWhile.Body>
-                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.666666666667,928.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.666666666667,1076" sap2010:WorkflowViewState.IdRef="Sequence_138">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:InputDialog Options="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="496.666666666667,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_29" IsPassword="False" Label="Remove Device: " OptionsString="PS4;PS5;Xbox One;Xbox One Series X;Switch;PC;Done removing devices">
+                                            <ui:InputDialog Options="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="496.666666666667,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_29" IsPassword="False" Label="Remove Device: " OptionsString="PlayStation 4;PlayStation 5;Xbox One;Xbox Series X;Nintendo Switch;PC;Done removing devices">
                                               <ui:InputDialog.Result>
                                                 <OutArgument x:TypeArguments="x:String">[deviceremove]</OutArgument>
                                               </ui:InputDialog.Result>
@@ -713,13 +713,13 @@
                                                 <InArgument x:TypeArguments="x:Int32">[cint(queryDT4.rows(0).Item("clientID"))]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[deviceremove]" sap:VirtualizedContainerService.HintSize="496.666666666667,268" sap2010:WorkflowViewState.IdRef="Switch`1_17">
-                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="PS4" CommandType="Text" DisplayName="Execute Non-Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_26" Sql="[&quot;delete From device Where devicename = 'PS4' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
+                                            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[deviceremove]" sap:VirtualizedContainerService.HintSize="496.666666666667,415.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_17">
+                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="PlayStation 4" CommandType="Text" DisplayName="Execute Non-Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_26" Sql="[&quot;delete From device Where devicename = 'PlayStation 4' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
                                                 <ui:ExecuteNonQuery.Parameters>
                                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                 </ui:ExecuteNonQuery.Parameters>
                                               </ui:ExecuteNonQuery>
-                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="PS5" CommandType="Text" DisplayName="Execute Non-Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_27" Sql="[&quot;delete From device Where devicename = 'PS5' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
+                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="PlayStation 5" CommandType="Text" DisplayName="Execute Non-Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_27" Sql="[&quot;delete From device Where devicename = 'PlayStation 5' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
                                                 <ui:ExecuteNonQuery.Parameters>
                                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                 </ui:ExecuteNonQuery.Parameters>
@@ -729,12 +729,12 @@
                                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                 </ui:ExecuteNonQuery.Parameters>
                                               </ui:ExecuteNonQuery>
-                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="Xbox One Series X" CommandType="Text" DisplayName="Execute Non-Query " ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_29" Sql="[&quot;delete From device Where devicename = 'Xbox One Series X' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
+                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="Xbox Series X" CommandType="Text" DisplayName="Execute Non-Query " ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_29" Sql="[&quot;delete From device Where devicename = 'Xbox Series X' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
                                                 <ui:ExecuteNonQuery.Parameters>
                                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                 </ui:ExecuteNonQuery.Parameters>
                                               </ui:ExecuteNonQuery>
-                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="Switch" CommandType="Text" DisplayName="Execute Non-Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_30" Sql="[&quot;delete From device Where devicename = 'Switch' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
+                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" x:Key="Nintendo Switch" CommandType="Text" DisplayName="Execute Non-Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_30" Sql="[&quot;delete From device Where devicename = 'Nintendo Switch' and DevclientID = '&quot;+clientID.ToString+&quot;'&quot;]">
                                                 <ui:ExecuteNonQuery.Parameters>
                                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                 </ui:ExecuteNonQuery.Parameters>
@@ -811,7 +811,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[inputOption = "Enter game name"]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID5" DisplayName="Enter game name" sap:VirtualizedContainerService.HintSize="965.333333333333,2868" sap2010:WorkflowViewState.IdRef="State_9">
+                    <State x:Name="__ReferenceID5" DisplayName="Enter game name" sap:VirtualizedContainerService.HintSize="134,61.3333333333333" sap2010:WorkflowViewState.IdRef="State_9">
                       <State.Entry>
                         <Sequence sap:VirtualizedContainerService.HintSize="918.666666666667,2498.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_99">
                           <Sequence.Variables>
@@ -1215,7 +1215,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID2" DisplayName="NewClient" sap:VirtualizedContainerService.HintSize="134,61.3333333333333" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <Sequence sap:VirtualizedContainerService.HintSize="804.666666666667,3710" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="804.666666666667,4516.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="queryDT2" />
                     <Variable x:TypeArguments="x:Boolean" Default="True" Name="run" />
@@ -1228,29 +1228,29 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InterruptibleDoWhile Condition="[inputname = True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="762.666666666667,943.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+                  <ui:InterruptibleDoWhile Condition="[inputname = True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="762.666666666667,949.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
                     <ui:InterruptibleDoWhile.Body>
-                      <Sequence sap:VirtualizedContainerService.HintSize="726,775.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                      <Sequence sap:VirtualizedContainerService.HintSize="726,780" sap2010:WorkflowViewState.IdRef="Sequence_111">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="684,242" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter name: ">
+                        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="684,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter name: ">
                           <ui:InputDialog.Result>
                             <OutArgument x:TypeArguments="x:String">[name]</OutArgument>
                           </ui:InputDialog.Result>
                         </ui:InputDialog>
-                        <If Condition="[name is Nothing]" sap:VirtualizedContainerService.HintSize="684,401.333333333333" sap2010:WorkflowViewState.IdRef="If_48">
+                        <If Condition="[name is Nothing]" sap:VirtualizedContainerService.HintSize="684,403.333333333333" sap2010:WorkflowViewState.IdRef="If_48">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,252" sap2010:WorkflowViewState.IdRef="Sequence_113">
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,252.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_113">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_12" Text="[&quot;Please enter in a name - cannot be blank.&quot;]" />
-                              <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_42">
+                              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_42">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[inputname]</OutArgument>
                                 </Assign.To>
@@ -1261,7 +1261,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_40">
+                            <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_40">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Boolean">[inputname]</OutArgument>
                               </Assign.To>
@@ -1274,29 +1274,29 @@
                       </Sequence>
                     </ui:InterruptibleDoWhile.Body>
                   </ui:InterruptibleDoWhile>
-                  <ui:InterruptibleDoWhile Condition="[inputemail = True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="762.666666666667,943.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+                  <ui:InterruptibleDoWhile Condition="[inputemail = True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="762.666666666667,949.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
                     <ui:InterruptibleDoWhile.Body>
-                      <Sequence sap:VirtualizedContainerService.HintSize="726,775.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_112">
+                      <Sequence sap:VirtualizedContainerService.HintSize="726,780" sap2010:WorkflowViewState.IdRef="Sequence_112">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="684,242" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter email: ">
+                        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="684,244.666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter email: ">
                           <ui:InputDialog.Result>
                             <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
                           </ui:InputDialog.Result>
                         </ui:InputDialog>
-                        <If Condition="[email is Nothing]" sap:VirtualizedContainerService.HintSize="684,401.333333333333" sap2010:WorkflowViewState.IdRef="If_49">
+                        <If Condition="[email is Nothing]" sap:VirtualizedContainerService.HintSize="684,403.333333333333" sap2010:WorkflowViewState.IdRef="If_49">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,252" sap2010:WorkflowViewState.IdRef="Sequence_114">
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,252.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_114">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_13" Text="[&quot;Please enter in an email - cannot be blank.&quot;]" />
-                              <Assign sap:VirtualizedContainerService.HintSize="334,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_43">
+                              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_43">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[inputemail]</OutArgument>
                                 </Assign.To>
@@ -1307,7 +1307,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_41">
+                            <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_41">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Boolean">[inputemail]</OutArgument>
                               </Assign.To>
@@ -1343,25 +1343,25 @@
                     </ui:FilterDataTable.SelectColumns>
                   </ui:FilterDataTable>
                   <ui:BuildDataTable DataTable="[buildDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="762.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                  <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="762.666666666667,1199.33333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                  <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="762.666666666667,1994" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                     <ui:InterruptibleWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.666666666667,1031.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="646,1824.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_63">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InputDialog Options="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="496.666666666667,296" sap2010:WorkflowViewState.IdRef="InputDialog_16" IsPassword="False" Label="Add Device: " OptionsString="PS4;PS5;Xbox One;Xbox One Series X;Switch;PC;Done adding devices">
+                        <ui:InputDialog Options="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="604,299.333333333333" sap2010:WorkflowViewState.IdRef="InputDialog_16" IsPassword="False" Label="Add Device: " OptionsString="PlayStation 4;PlayStation 5;Xbox One;Xbox Series X;Nintendo Switch;PC;Done adding devices">
                           <ui:InputDialog.Result>
                             <OutArgument x:TypeArguments="x:String">[device]</OutArgument>
                           </ui:InputDialog.Result>
                         </ui:InputDialog>
-                        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT3]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="496.666666666667,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_27" Sql="[&quot;select clientID from clients where username = '&quot;+username+&quot;'&quot;]">
+                        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT3]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="604,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_27" Sql="[&quot;select clientID from clients where username = '&quot;+username+&quot;'&quot;]">
                           <ui:ExecuteQuery.Parameters>
                             <scg:Dictionary x:TypeArguments="x:String, Argument" />
                           </ui:ExecuteQuery.Parameters>
                         </ui:ExecuteQuery>
-                        <Assign sap:VirtualizedContainerService.HintSize="496.666666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
+                        <Assign sap:VirtualizedContainerService.HintSize="604,62" sap2010:WorkflowViewState.IdRef="Assign_17">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Int32">[clientid]</OutArgument>
                           </Assign.To>
@@ -1369,7 +1369,7 @@
                             <InArgument x:TypeArguments="x:Int32">[cint(queryDT3.rows(0).Item("clientID"))]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:FilterDataTable DataTable="[queryDT3]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="496.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[queryDT3]" SelectColumnsMode="Keep">
+                        <ui:FilterDataTable DataTable="[queryDT3]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="604,58.6666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[queryDT3]" SelectColumnsMode="Keep">
                           <ui:FilterDataTable.Filters>
                             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                               <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -1381,8 +1381,8 @@
                             </scg:List>
                           </ui:FilterDataTable.SelectColumns>
                         </ui:FilterDataTable>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[device]" sap:VirtualizedContainerService.HintSize="496.666666666667,276" sap2010:WorkflowViewState.IdRef="Switch`1_9">
-                          <Sequence x:Key="PS4" sap:VirtualizedContainerService.HintSize="564,736" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[device]" sap:VirtualizedContainerService.HintSize="604,1065.33333333333" sap2010:WorkflowViewState.IdRef="Switch`1_9">
+                          <Sequence x:Key="PlayStation 4" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_52">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                             </Sequence.Variables>
@@ -1392,12 +1392,12 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_13" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_28" Sql="[&quot;select * from device where devicename = 'PS4' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_28" Sql="[&quot;select * from device where devicename = 'PlayStation 4' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                               <ui:ExecuteQuery.Parameters>
                                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
                               </ui:ExecuteQuery.Parameters>
                             </ui:ExecuteQuery>
-                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,418" sap2010:WorkflowViewState.IdRef="If_23">
+                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,419.333333333333" sap2010:WorkflowViewState.IdRef="If_23">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="376,268.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -1405,13 +1405,13 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PS4&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_42" />
+                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PlayStation 4&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_42" />
                                   <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_12" TableName="device" />
                                 </Sequence>
                               </If.Then>
                             </If>
                           </Sequence>
-                          <Sequence x:Key="PS5" sap:VirtualizedContainerService.HintSize="564,736" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                          <Sequence x:Key="PlayStation 5" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_54">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                             </Sequence.Variables>
@@ -1421,12 +1421,12 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_14" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_29" Sql="[&quot;select * from device where devicename = 'PS5' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_29" Sql="[&quot;select * from device where devicename = 'PlayStation 5' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                               <ui:ExecuteQuery.Parameters>
                                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
                               </ui:ExecuteQuery.Parameters>
                             </ui:ExecuteQuery>
-                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,418" sap2010:WorkflowViewState.IdRef="If_24">
+                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,419.333333333333" sap2010:WorkflowViewState.IdRef="If_24">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="376,268.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -1434,13 +1434,13 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PS5&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_43" />
+                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;PlayStation 5&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_43" />
                                   <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_13" TableName="device" />
                                 </Sequence>
                               </If.Then>
                             </If>
                           </Sequence>
-                          <Sequence x:Key="Xbox One" sap:VirtualizedContainerService.HintSize="564,736" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                          <Sequence x:Key="Xbox One" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_56">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                             </Sequence.Variables>
@@ -1455,7 +1455,7 @@
                                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
                               </ui:ExecuteQuery.Parameters>
                             </ui:ExecuteQuery>
-                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,418" sap2010:WorkflowViewState.IdRef="If_25">
+                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,419.333333333333" sap2010:WorkflowViewState.IdRef="If_25">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="376,268.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -1469,7 +1469,7 @@
                               </If.Then>
                             </If>
                           </Sequence>
-                          <Sequence x:Key="Xbox One Series X" sap:VirtualizedContainerService.HintSize="564,736" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                          <Sequence x:Key="Xbox Series X" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_58">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                             </Sequence.Variables>
@@ -1479,12 +1479,12 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_16" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_31" Sql="[&quot;select * from device where devicename = 'Xbox One Series X' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_31" Sql="[&quot;select * from device where devicename = 'Xbox Series X' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                               <ui:ExecuteQuery.Parameters>
                                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
                               </ui:ExecuteQuery.Parameters>
                             </ui:ExecuteQuery>
-                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,418" sap2010:WorkflowViewState.IdRef="If_26">
+                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,419.333333333333" sap2010:WorkflowViewState.IdRef="If_26">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="376,268.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_57">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -1492,13 +1492,13 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Xbox One Series X&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_45" />
+                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Xbox Series X&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_45" />
                                   <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_15" TableName="device" />
                                 </Sequence>
                               </If.Then>
                             </If>
                           </Sequence>
-                          <Sequence x:Key="Switch" sap:VirtualizedContainerService.HintSize="564,736" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                          <Sequence x:Key="Nintendo Switch" sap:VirtualizedContainerService.HintSize="564,737.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_60">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="sd:DataTable" Name="queryDT5" />
                             </Sequence.Variables>
@@ -1508,12 +1508,12 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:BuildDataTable DataTable="[buildDT2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="522,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_17" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;devclientid&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;devicename&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;pcref&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_32" Sql="[&quot;select * from device where devicename = 'Switch' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
+                            <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="522,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_32" Sql="[&quot;select * from device where devicename = 'Nintendo Switch' and devclientid = '&quot;+clientid.ToString+&quot;'&quot;]">
                               <ui:ExecuteQuery.Parameters>
                                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
                               </ui:ExecuteQuery.Parameters>
                             </ui:ExecuteQuery>
-                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,418" sap2010:WorkflowViewState.IdRef="If_27">
+                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,419.333333333333" sap2010:WorkflowViewState.IdRef="If_27">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="376,268.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_59">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -1521,7 +1521,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Switch&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_46" />
+                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{queryDT3.rows(0).Item(&quot;clientID&quot;),&quot;Nintendo Switch&quot;}]" DataTable="[buildDT2]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_46" />
                                   <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[buildDT2]" DisplayName="Insert" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="InsertDataTable_16" TableName="device" />
                                 </Sequence>
                               </If.Then>
@@ -1542,7 +1542,7 @@
                                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
                               </ui:ExecuteQuery.Parameters>
                             </ui:ExecuteQuery>
-                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,418" sap2010:WorkflowViewState.IdRef="If_28">
+                            <If Condition="[queryDT5.rows.count=0]" sap:VirtualizedContainerService.HintSize="522,419.333333333333" sap2010:WorkflowViewState.IdRef="If_28">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="376,268.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_61">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -1556,7 +1556,7 @@
                               </If.Then>
                             </If>
                           </Sequence>
-                          <Assign x:Key="Done adding devices" sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
+                          <Assign x:Key="Done adding devices" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_18">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[run]</OutArgument>
                             </Assign.To>
