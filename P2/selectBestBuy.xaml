@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1486,4271</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1486,4170</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -103,19 +103,19 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1148,4206" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence sap:VirtualizedContainerService.HintSize="1148,4105" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Best Buy | Official Online Store | Shop Now &amp; Save" sap:VirtualizedContainerService.HintSize="1106,4114" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Best Buy | Official Online Store | Shop Now &amp; Save" sap:VirtualizedContainerService.HintSize="1106,4013" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1072,3898" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1072,3797" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="PlayStation 5" Name="getPlatform" />
               <Variable x:TypeArguments="x:String" Default="$69.99" Name="getCurrPrice" />
@@ -202,14 +202,14 @@
               </ui:GetValue.Value>
             </ui:GetValue>
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1030,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[GetTitle]" />
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1030,2052" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1030,1951" sap2010:WorkflowViewState.IdRef="TryCatch_9">
               <TryCatch.Try>
-                <If Condition="[GetTitle.contains(&quot;Blu-ray&quot;) or GetTitle.contains(&quot;DVD&quot;)or GetTitle.contains(&quot;VINYL&quot;)]" sap:VirtualizedContainerService.HintSize="992,1825" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[GetTitle.contains(&quot;Blu-ray&quot;) or GetTitle.contains(&quot;DVD&quot;)or GetTitle.contains(&quot;VINYL&quot;)]" sap:VirtualizedContainerService.HintSize="992,1724" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
                     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[GetTitle+ &quot;Title Contains Blu-Ray/DVD/VINYL, They are not a games&quot;]" />
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="613,1676" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                    <Sequence sap:VirtualizedContainerService.HintSize="613,1575" sap2010:WorkflowViewState.IdRef="Sequence_69">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -257,9 +257,9 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="571,1063" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="571,962" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                         <TryCatch.Try>
-                          <Sequence sap:VirtualizedContainerService.HintSize="533,836" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                          <Sequence sap:VirtualizedContainerService.HintSize="533,735" sap2010:WorkflowViewState.IdRef="Sequence_70">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -277,9 +277,9 @@
                                 <OutArgument x:TypeArguments="x:String">[getPrice]</OutArgument>
                               </ui:GetValue.Value>
                             </ui:GetValue>
-                            <If Condition="[getPrice.Length &gt; 50]" sap:VirtualizedContainerService.HintSize="491,597" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If Condition="[getPrice.Length &gt; 50]" sap:VirtualizedContainerService.HintSize="491,496" sap2010:WorkflowViewState.IdRef="If_3">
                               <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="346,448" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                <Sequence sap:VirtualizedContainerService.HintSize="346,347" sap2010:WorkflowViewState.IdRef="Sequence_73">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Int32" Name="checkSpace" />
                                   </Sequence.Variables>
@@ -288,26 +288,18 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="304,356" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="304,255" sap2010:WorkflowViewState.IdRef="Sequence_74">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_18">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:String">[getPrice]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">[getPrice.replace("$","")]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
                                     <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_16">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[getPrice]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="x:String">[getPrice.Substring(0,5)]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">[getPrice.Substring(0,6).replace("$","")]</InArgument>
                                       </Assign.Value>
                                     </Assign>
                                     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[getPrice]" />
