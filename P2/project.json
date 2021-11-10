@@ -7,7 +7,7 @@
     "UiPath.Excel.Activities": "[2.9.5]",
     "UiPath.Mail.Activities": "[1.12.2]",
     "UiPath.PDF.Activities": "[3.4.1]",
-    "UiPath.System.Activities": "[20.10.4]",
+    "UiPath.System.Activities": "[21.10.2]",
     "UiPath.UIAutomation.Activities": "[21.10.3]",
     "UiPath.WebAPI.Activities": "[1.6.0]",
     "UiPath.Word.Activities": "[1.7.3]"
