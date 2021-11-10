@@ -1,0 +1,263 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="makePDF" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="622,5965" sap2010:WorkflowViewState.IdRef="makePDF_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="makePDF" sap:VirtualizedContainerService.HintSize="632,5860" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="sample.docx" Name="wordAddress" />
+      <Variable x:TypeArguments="x:String" Default="sample.pdf" Name="pdfAddress" />
+      <Variable x:TypeArguments="x:String" Name="gameName" />
+      <Variable x:TypeArguments="x:String" Name="personName" />
+      <Variable x:TypeArguments="x:String" Name="videoGame" />
+      <Variable x:TypeArguments="x:String" Name="vendor" />
+      <Variable x:TypeArguments="x:String" Name="finalPrice" />
+      <Variable x:TypeArguments="x:String" Name="userName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap2010:Annotation.AnnotationText="Will reference the game name" sap:VirtualizedContainerService.HintSize="590,91" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[gameName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Metroid Dread</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[finalPrice]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">54.99</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[videoGame]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Metroid Dread</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[vendor]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Target</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[personName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Test Testermen</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[userName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">RPGabe</InArgument>
+      </Assign.Value>
+    </Assign>
+    <p:WordApplicationScope sap2010:Annotation.AnnotationText="Make default location be on Desktop for Word and PDF document. wordAddress variable is a place holder for where ever we decide to save file, will just reference my desktop for now " DisplayName="Word Application Scope" FilePath="TemplateAndDocuments\P2Template.docx" sap:VirtualizedContainerService.HintSize="590,523" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+      <p:WordApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WordDocument">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="518,372" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,280" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:CopyFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Make a copy of the word doc, for continious use in making pdf files" Destination="TemplateAndDocuments\sampledoc.docx" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="TemplateAndDocuments\P2TemplateDoc.docx">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CopyFile>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </p:WordApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p:WordApplicationScope>
+    <Sequence sap2010:Annotation.AnnotationText="Here we will add the info from db to the copy word doc then convert to pdf" sap:VirtualizedContainerService.HintSize="590,4101" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="TemplateAndDocuments\sampledoc.docx" sap:VirtualizedContainerService.HintSize="548,3978" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+        <p:WordApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WordDocument">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514,3869" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace videoGame Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[videoGame]" ReplaceAll="True" Search="Name of Game here" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[vendor]" ReplaceAll="True" Search="Vendor Name" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[finalPrice]" ReplaceAll="True" Search="Price of Game" />
+              <p:WordInsertHyperlink Found="{x:Null}" Address="https://www.amazon.com/Metroid-Dread-Nintendo-Switch/dp/B097B1149G/ref=sr_1_2?crid=O83X1CVDHJV9&amp;keywords=metroid+dread&amp;qid=1636138119&amp;qsid=142-2449875-8110721&amp;s=videogames&amp;sprefix=metroid+drea%2Cvideogames%2C166&amp;sr=1-2&amp;sres=B097B1149G%2CB097BP5DLQ%2CB097BKT2TH%2CB097C44XPT%2CB09J46SGMZ%2CB09JVHKYK7%2CB0979ZHC5B%2CB097B15RT8%2CB09C7DTYLB%2CB09C7H2SN3%2CB097BL2S2W%2CB097BJT32N%2CB071X7V8NR%2CB097B2HQ5R%2CB09J2YQX6Q%2CB07H4SWQ91" DisplayName="Add Hyperlink to Document" sap:VirtualizedContainerService.HintSize="472,289" sap2010:WorkflowViewState.IdRef="WordInsertHyperlink_2" InsertRelativeTo="Text" Position="Replace" TextToDisplay="Buy the game here!" TextToSearchFor="Link To Website" />
+              <p:WordReplacePicture DisplayName="Replace Wanted Game Picture" sap:VirtualizedContainerService.HintSize="472,137" sap2010:WorkflowViewState.IdRef="WordReplacePicture_1" PictureAltText="img001" PicturePath="videoGameCover\Skyrim.jpg" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace NameGame1 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="Metroid Samus Returns" ReplaceAll="True" Search="NameGame1" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace 2nd Game Recom. Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_5" Replace="Metroid Fusion" ReplaceAll="True" Search="NameGame2" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace 3rd Game Recom. Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_6" Replace="Mario Party Superstar" ReplaceAll="True" Search="NameGame3" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Console1 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_10" Replace="Xbox One" ReplaceAll="True" Search="Console1" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Console2 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_11" Replace="Xbox One" ReplaceAll="True" Search="Console2" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Console3 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_12" Replace="Xbox One" ReplaceAll="True" Search="Console3" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Genre1 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_7" Replace="Action" ReplaceAll="True" Search="Genre1" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Genre2 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_8" Replace="Action" ReplaceAll="True" Search="Genre2" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Genre3 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_9" Replace="Action" ReplaceAll="True" Search="Genre3" />
+              <TryCatch sap2010:Annotation.AnnotationText="need to keep information on the recommended games for this and the main game to insert pictures&#xA;&#xA;&#xA;Will Use: Try-Catch block to catch any exceptions" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,493" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <p:WordReplacePicture sap2010:Annotation.AnnotationText="These replace pictures will be matched with the data tables&#xA;" DisplayName="Replace  1st Rec Picture" sap:VirtualizedContainerService.HintSize="434,179" sap2010:WorkflowViewState.IdRef="WordReplacePicture_2" PictureAltText="img002" PicturePath="videoGameCover\Borderlands 2.jpg">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </p:WordReplacePicture>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:NullReferenceException">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
+                      </ActivityAction.Argument>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Couldn't Replace Picture" />
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+              <p:WordReplacePicture DisplayName="Replace 2nd Rec Picture" sap:VirtualizedContainerService.HintSize="472,137" sap2010:WorkflowViewState.IdRef="WordReplacePicture_3" PictureAltText="img003" PicturePath="videoGameCover\Monster Hunter World.jpg" />
+              <p:WordReplacePicture DisplayName="Replace 3rd Rec Picture" sap:VirtualizedContainerService.HintSize="472,137" sap2010:WorkflowViewState.IdRef="WordReplacePicture_4" PictureAltText="img004" PicturePath="videoGameCover\Portal 2.jpg" />
+            </Sequence>
+          </ActivityAction>
+        </p:WordApplicationScope.Body>
+      </p:WordApplicationScope>
+    </Sequence>
+    <Sequence sap2010:Annotation.AnnotationText="Save document as pdf file and possibly send an email to the user" sap:VirtualizedContainerService.HintSize="590,433" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="TemplateAndDocuments\sampledoc.docx" sap:VirtualizedContainerService.HintSize="510,310" sap2010:WorkflowViewState.IdRef="WordApplicationScope_3">
+        <p:WordApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WordDocument">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,201" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[&quot;TemplateAndDocuments\&quot;+userName+&quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="434,109" sap2010:WorkflowViewState.IdRef="WordExportToPdf_2" />
+            </Sequence>
+          </ActivityAction>
+        </p:WordApplicationScope.Body>
+      </p:WordApplicationScope>
+    </Sequence>
+  </Sequence>
+</Activity>
