@@ -2,11 +2,14 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="GameName" Type="InArgument(x:String)" />
+    <x:Property Name="IN_Platform" Type="InArgument(x:String)" />
+    <x:Property Name="OUT_TargetPrice" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>896,5046.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1741,5558</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -94,13 +97,21 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="740,4942" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="739,5453" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="WantedGame" />
+      <Variable x:TypeArguments="x:String" Name="WantedGame">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GameName" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="GameName" />
       <Variable x:TypeArguments="x:String" Name="Platform" />
       <Variable x:TypeArguments="x:String" Name="Search" />
-      <Variable x:TypeArguments="x:String" Name="PlatformName" />
+      <Variable x:TypeArguments="x:String" Name="PlatformName">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_Platform" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="FinalSearch" />
       <Variable x:TypeArguments="x:String" Name="Price" />
       <Variable x:TypeArguments="x:String" Name="NoPlus" />
@@ -111,30 +122,52 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="698,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <Assign sap:VirtualizedContainerService.HintSize="698,62" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[WantedGame]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Super Mario 3D World</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="698,62" sap2010:WorkflowViewState.IdRef="Assign_3">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[PlatformName]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Nintendo Switch</InArgument>
-      </Assign.Value>
-    </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Target : Expect More. Pay Less." sap:VirtualizedContainerService.HintSize="698,4472" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" ScopeGuid="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="697,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="697,230" sap2010:WorkflowViewState.IdRef="CommentOut_22">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[WantedGame]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Super Mario 3D World</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="697,230" sap2010:WorkflowViewState.IdRef="CommentOut_23">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_36">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[PlatformName]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Nintendo Switch</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Target : Expect More. Pay Less." sap:VirtualizedContainerService.HintSize="697,4654" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" ScopeGuid="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="664,4254" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="663,4438" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="HumblePrice" />
               <Variable x:TypeArguments="x:String" Name="Platform" />
@@ -145,9 +178,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[WantedGame.Contains(&quot;+&quot;)]" sap:VirtualizedContainerService.HintSize="622,373.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[WantedGame.Contains(&quot;+&quot;)]" sap:VirtualizedContainerService.HintSize="621,365" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="242,116.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                <Sequence sap:VirtualizedContainerService.HintSize="242,116" sap2010:WorkflowViewState.IdRef="Sequence_34">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,16 +190,16 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Super Mario Odyssey'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Text="[WantedGame+&quot;[k(enter)]&quot;]" Version="V1">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Super Mario Odyssey'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Text="[WantedGame+&quot;[k(enter)]&quot;]" Version="V1">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.target.com/" DesignTimeRectangle="904, 130, 640, 41" ElementType="InputBox" FriendlyName="'Super Mario Odyssey'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' aaname='' /&gt;" Guid="7dcb2773-3ecc-4080-b185-2606c9049515" ImageBase64="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" InformativeScreenshot="74e186216ca7eabcfa7df5c75bbbd131.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Target : Expect More. Pay Less.' /&gt;" SearchSteps="FuzzySelector, Image" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
               </If.Else>
             </If>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="622,337.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="621,322" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <TryCatch.Try>
-                <uix:NClick ClickType="Single" DisplayName="Click 'Video Games'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+                <uix:NClick ClickType="Single" DisplayName="Click 'Video Games'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.target.com/s?searchTerm=red+deaD+REDEMPTION+2" DesignTimeRectangle="104, 685, 120, 25" ElementType="Text" FriendlyName="'Video Games'" FullSelectorArgument="&lt;webctrl aaname='Video Games' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' parentid='mainContainer' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Video Games' type='' parentid='mainContainer' tag='A' check:text='Video Games' /&gt;" Guid="cb83a964-dd4e-430f-8fdf-af198cbc9f22" ImageBase64="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" InformativeScreenshot="1333ebabed62ee3e70792d48d4afd5b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Red Dead Redemption 2 : Target' /&gt;" SearchSteps="FuzzySelector, Image">
                       <uix:TargetAnchorable.Anchors>
@@ -179,7 +212,7 @@
                 </uix:NClick>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,165.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,23 +223,23 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;I'm sorry, but that item could not be located&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;I'm sorry, but that item could not be located&quot;]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="622,1954" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="621,1914" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                   <ui:IfElseIfBlock BlockType="If" Condition="[PlatformName = &quot;PlayStation 4&quot;]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ClickType="Single" DisplayName="Click 'PlayStation 4'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+                        <uix:NClick ClickType="Single" DisplayName="Click 'PlayStation 4'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.target.com/s?sortBy=relevance&amp;Nao=0&amp;category=5xtg5&amp;searchTerm=LEGO+Marvel%27s+Avengers" DesignTimeRectangle="102, 716, 121, 29" ElementType="Text" FriendlyName="'PlayStation 4'" FullSelectorArgument="&lt;webctrl aaname='PlayStation 4' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' parentid='mainContainer' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='PlayStation 4' type='' parentid='mainContainer' tag='A' check:text='PlayStation 4' /&gt;" Guid="4e3465d3-5abb-4f47-a394-64845a5b9a63" ImageBase64="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" InformativeScreenshot="f9c65a1de172b82d2f7bac155fc7273d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lego Marvel&amp;apos;s Avengers : Target' /&gt;" SearchSteps="FuzzySelector, Image" />
                           </uix:NClick.Target>
@@ -216,13 +249,13 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[PlatformName = &quot;Xbox One&quot;]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_26">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ClickType="Single" DisplayName="Click 'Xbox One'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Xbox One'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.target.com/s?sortBy=relevance&amp;Nao=0&amp;category=5xtg5&amp;searchTerm=LEGO+Marvel%27s+Avengers" DesignTimeRectangle="102, 683, 93, 29" ElementType="Text" FriendlyName="'Xbox One'" FullSelectorArgument="&lt;webctrl aaname='Xbox One' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' parentid='mainContainer' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Xbox One' type='' parentid='mainContainer' tag='A' check:text='Xbox One' /&gt;" Guid="1651d823-ffa8-4f5f-b677-f46fd27be93f" ImageBase64="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" InformativeScreenshot="14cb6f9da1e9aa905a45b9bb30475ca1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lego Marvel&amp;apos;s Avengers : Target' /&gt;" SearchSteps="FuzzySelector, Image" />
                           </uix:NClick.Target>
@@ -232,13 +265,13 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[PlatformName = &quot;Nintendo Switch&quot;]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_27">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ClickType="Single" DisplayName="Click 'Nintendo Switch'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Nintendo Switch'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.target.com/s?sortBy=relevance&amp;Nao=0&amp;category=5xtg5&amp;searchTerm=LEGO+Marvel%27s+Avengers" DesignTimeRectangle="102, 782, 152, 29" ElementType="Text" FriendlyName="'Nintendo Switch'" FullSelectorArgument="&lt;webctrl aaname='Nintendo Switch' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' parentid='mainContainer' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Nintendo Switch' type='' parentid='mainContainer' tag='A' check:text='Nintendo Switch' /&gt;" Guid="0a115050-33c1-4981-969a-956a2fd3b8da" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAAdCAYAAABWv6VKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAdXSURBVHhe7VrdZ2NbFL//U57yEEop92HykrjcUCbuw43LhD5EmboPt4bKMKIP0YeRoWKYGEb6MFJGhyFDZR7qlHJKpZTzUEI59OEQfnet/ZHzkX3y0ebMnXHPj0POPuvssz5+e621d/sLUqRIECnBUiSKlGApEkVKsBSJIiVYikSREixFokgJliJRhAnmuXDv6LpX9zHwXJbz1B3Dg3M2gD1Stz877qP2rRaeY6N/1EbzoCmuzrGF4Z16uDIkFJMlfRMi2Oioikwmg0xuByexBo/QfUYymQYsNeKd1pHl97Z69PQhcDE8HWBw5ar7/xbWfti+leF+iM72mvTx1LWGyqFNtFgNzDF5vJ+X9Y2ZYHRl9/oxxk4TDLc91NazKL22HuggCw3+7v7KQ/ogJEMwFyfPszRvFuWDAZxAlXCv+2j+IZ9VP64o5Rhj8ng/r4RgxUJRGFv/aqKLgWCPxv+AYLddVNnGf2IW7t0JdnL0/EkLthpaPX4QgjW+WmgW2NgGBlP9mIFgngOLUq/l+K5zrygVnzvSmbc2eu91v2HDF6M+4ZzkTtuoseHbbfptSOFjSu1nPXS4Zznson9hWOVKB9HLsPxpF20lP7iOKQmRebXcLCe61wN0D022zMFZQ/i2+HaoBqLw0N/j71bRY/O8EWz2xWXUVu0zG6OxGlLwHEv4b8hmhGLyAD8fdNA7G8KNfCPoG+4lzXH1YSbYGb183kSRfudfDSRJJjCVSLk6q0e+M4QizyhoH2tYY6OC1/qu6vH0XJEruMKcE+z+zuUjLLO23cEwSH6lQ+MLLY4peSoV1N+EwPPyIgrJ8bw9dF/x7wjBXAstUcai7xSx+8lRQjOgM1iBFm0M38Ogfm2T5KMZbTyQWSiTR+tSjSlY+6xfHX0OWCgm8/3sXXWopBpk1mvoXPkM0ATrzoyrj1iCMeutfS6VRboPUmwJguWyyBZ20bv23x99riNPsvk30m1yR9pHnRV82Q/vYu8ppTMJCuS0WzU2ptX4pS7IH+oTlQ7Z3BrKbyx/5bk22kJf2rjowI5ttHjeXBnNU19nz+mjMSFnwL4xBfspjxGZjofw9Ny3A9U7RX1kgvYnf3cD5b+b6H6hVe/Gvzd8VyL5EjrXaoBx2SL/kV+pnFY+BIlNNj2hubVPIjGZ7Wca5/LMZLr02e9edlDl8QKRXNksCcZjs+OqMYNghHtaLax0oQlrMtcSBONVdqEGJlArk7JbQNrYGzjvyzRHOexgheE79exGDSgdMpSBognC+1oP2eV+2hH3QX0n0PME7NM7svI7Q3nTvdPTDubmMSpB9nED1V8jmVAQro1+tJRfd1Ci50E9nQ8VZDZbaHE5fX7i26pkJ32zISaz/ZxH49s02eWzLJrn8n65uM4jGMH71hDMLB7o3cgyBKNyEKnhk/fnEmyE3haN/daCxastep21RBbb+aRcrHQIr2oF1f9ou6RuFXSNjODdntRda2MdMCHi5CO904LwXId6LO536qgV9NEFlfKJnxkqK02IJHXLkoxcJKocEmTsAll6YYIpPxtjNY3l4roAwaQDZRmQNX85ggVNkViUYGpszlXSWcXoUIUQwQz6RxDW3Q9AnLzIKoaeaBlwea6LnpB276cBir3J05gi0ph8QtlSZCmRsfQ31aIIZrSFCUY9K2fgCDHisFxcFyIYQddoUYu/F8FUyt1soMc7nrhL74QWJpifoeJWbFj3+fLGXimEEU72SihRabNmZYkL7q8iflA9l9Bd/NaZUmY3scA82VvVjif0WoJgKkv+2Z1f4gnJEIzAKVn2If3vRDBVenI0hyko1OxzqfQb7kUJprNCXMZxVEPv6z6Rn+o7GC562yzvlysTZJktoX2lBkxwuqhE/cAbEiIAN88iPpu0e1aPxK6RT+rJviwRr6s3QoyFCaYzdIz+5y1aGCU01SYmMYLJlcxOkjuY5AlGFBPNdZbmnV5bcU3+IgTDTQdlus9u0aqNkFf3nCHdZ8nT3GJH+zJ6nBOByk6mOTSkTZFMRLBfE8EpkzcokwZ3aboPa+zT80hgFycYzXNcE9+tTvWvuj2qoaeOHxIkGEHvmFjJJAhWqKHBh3yftaG8utjANVRe92Bdj+De2Ogd1kRQi+SoSVCXIRi9pY8M1v5qoXfhiHn773dRyuWR55IR0p3kD+LkSdZw/jONwDHFegWNo7605042++3nJVEhjAQUGUou7NBfV5TNPOeU3bMIFvWzPrZRfrZvXDgXfXReSJ2KAVInSzDC6GNVfHS1BPNgv61iQ5M3VCIc9PcrkUM9dsQgfJK9FMEIYxfWYeCbfOVK2D12MDDq7mF4VEc5dBiZxcZWCwPDJ82gOUzHFHzRt3cOIzZpqOY+tEsUUH1qMJNrGP0xw8/3Q3T3ymE/5zZQPQycKRIeRbAfGqrnCvVdq8AD5vWU/Iwz0rnw7kYYnvFGxYazapseA/0vWyvS6echWIqfEinBUiSKlGApEkVKsBSJIiVYikSREixFggD+BcHhSz76LMf7AAAAAElFTkSuQmCC" InformativeScreenshot="abdd07566741f577449311e5a74b968c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lego Marvel&amp;apos;s Avengers : Target' /&gt;" SearchSteps="FuzzySelector, Image" />
                           </uix:NClick.Target>
@@ -248,13 +281,13 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[PlatformName = &quot;PlayStation 5&quot;]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_29">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ClickType="Single" DisplayName="Click 'PlayStation 5'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+                        <uix:NClick ClickType="Single" DisplayName="Click 'PlayStation 5'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.target.com/s?sortBy=relevance&amp;Nao=0&amp;category=5xtg5&amp;searchTerm=battlefield+2042" DesignTimeRectangle="104, 823, 117, 25" ElementType="Text" FriendlyName="'PlayStation 5'" FullSelectorArgument="&lt;webctrl aaname='PlayStation 5' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' parentid='mainContainer' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='PlayStation 5' type='' parentid='mainContainer' tag='A' check:text='PlayStation 5' /&gt;" Guid="52efb3c1-e4d1-442c-8431-a5612f9c0679" ImageBase64="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" InformativeScreenshot="ebeaa310fb74cf49e9616d41be051178.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Battlefield 2042 : Target' /&gt;" SearchSteps="FuzzySelector, Image" />
                           </uix:NClick.Target>
@@ -264,13 +297,13 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[PlatformName = &quot;Xbox Series X|S&quot;]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_30">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ClickType="Single" DisplayName="Click 'Xbox Series XS'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Xbox Series XS'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.target.com/s?sortBy=relevance&amp;Nao=0&amp;category=5xtg5&amp;searchTerm=LEGO+Marvel%27s+Avengers" DesignTimeRectangle="102, 749, 147, 29" ElementType="Text" FriendlyName="'Xbox Series XS'" FullSelectorArgument="&lt;webctrl aaname='Xbox Series X|S' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' parentid='mainContainer' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Xbox Series X|S' type='' parentid='mainContainer' tag='A' check:text='Xbox Series X|S' /&gt;" Guid="302764f0-b405-4403-898c-402e24a50f2d" ImageBase64="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" InformativeScreenshot="70f5ccc28d57ab95a01c9b2bd41793c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Lego Marvel&amp;apos;s Avengers : Target' /&gt;" SearchSteps="FuzzySelector, Image" />
                           </uix:NClick.Target>
@@ -281,15 +314,15 @@
                 </sc:BindingList>
               </ui:IfElseIf.ConditionBlocks>
             </ui:IfElseIf>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="622,305.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="621,477" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,252.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ClickType="Single" DisplayName="Click 'Super Mario'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Super Mario'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77b4c6b5-6049-4959-841f-ddff0130a3f4" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.target.com/s?sortBy=relevance&amp;Nao=0&amp;category=5xtg5&amp;searchTerm=Super+Mario+Odyssey&amp;facetedValue=ftml9" DesignTimeRectangle="368, 645, 206, 56" ElementType="Text" FriendlyName="'Super Mario'" FullSelectorArgument="&lt;webctrl aaname='Super Mario Odyssey - Nintendo Switch' parentid='mainContainer' tag='A' /&gt;" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='*{0}* - *{1}*' parentid='mainContainer' tag='A' type='' /&gt;&quot;, WantedGame, PlatformName)]" Guid="da3c9605-9775-4b7e-9677-5639bffc13e9" ImageBase64="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" InformativeScreenshot="cbb7f4d73d36c90de4043d4c7cf458a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Super Mario Odyssey : Target' /&gt;" SearchSteps="FuzzySelector">
                         <uix:TargetAnchorable.Anchors>
@@ -303,10 +336,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,133.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -314,14 +347,14 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Sorry, but that title could not be found." />
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Sorry, but that title could not be found." />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="622,337.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="621,489" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,262.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,262" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -353,10 +386,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,165.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -364,13 +397,13 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;I'm sorry, but that item could not be located&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;I'm sorry, but that item could not be located&quot;]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="622,83.3333333333333" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.target.com/" Version="V1" />
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="622,130" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="621,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.target.com/" Version="V1" />
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="621,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -389,19 +422,26 @@
                       <InArgument x:TypeArguments="x:String">[Price.replace("$","")]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[OUT_TargetPrice]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[Price]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="622,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Price.replace(&quot; Sale&quot;,&quot;&quot;)]" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="622,256" sap2010:WorkflowViewState.IdRef="CommentOut_21">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="621,254" sap2010:WorkflowViewState.IdRef="CommentOut_21">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,177.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_31">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85.3333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[Price.replace(&quot; Sale&quot;,&quot;&quot;)]" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[Price.replace(&quot; Sale&quot;,&quot;&quot;)]" />
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
