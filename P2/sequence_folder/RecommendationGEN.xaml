@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1741,2517</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1418,2517</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RecommendationGEN_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -88,7 +88,6 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:DatabaseConnect DatabaseConnection="[GamesDB]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="438,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=P2" />
     <Assign sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[WantedGame]</OutArgument>
@@ -166,6 +165,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
+    <ui:DatabaseConnect DatabaseConnection="[GamesDB]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="438,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=P2" />
     <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[Genre]" DisplayName="Execute Query" ExistingDbConnection="[GamesDB]" sap:VirtualizedContainerService.HintSize="438,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;select gamegenre from games where gamename='&quot;+WantedGame+&quot;';&quot;]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
