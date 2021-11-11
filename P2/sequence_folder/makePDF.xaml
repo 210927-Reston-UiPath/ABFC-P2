@@ -1,6 +1,37 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="makePDF" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="622,5965" sap2010:WorkflowViewState.IdRef="makePDF_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="makePDF" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_GameName" Type="InArgument(x:String)" />
+    <x:Property Name="In_Price" Type="InArgument(x:String)" />
+    <x:Property Name="In_store" Type="InArgument(x:String)" />
+    <x:Property Name="In_ClientName" Type="InArgument(x:String)" />
+    <x:Property Name="In_username" Type="InArgument(x:String)" />
+    <x:Property Name="In_link" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:makePDF.In_GameName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:makePDF.In_GameName>
+  <this:makePDF.In_Price>
+    <InArgument x:TypeArguments="x:String" />
+  </this:makePDF.In_Price>
+  <this:makePDF.In_store>
+    <InArgument x:TypeArguments="x:String" />
+  </this:makePDF.In_store>
+  <this:makePDF.In_ClientName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:makePDF.In_ClientName>
+  <this:makePDF.In_username>
+    <InArgument x:TypeArguments="x:String" />
+  </this:makePDF.In_username>
+  <this:makePDF.In_link>
+    <InArgument x:TypeArguments="x:String" />
+  </this:makePDF.In_link>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1741,6065</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>makePDF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="50">
+    <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -30,7 +61,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,7 +89,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="makePDF" sap:VirtualizedContainerService.HintSize="632,5860" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="makePDF" sap:VirtualizedContainerService.HintSize="632,5960" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="sample.docx" Name="wordAddress" />
       <Variable x:TypeArguments="x:String" Default="sample.pdf" Name="pdfAddress" />
@@ -68,6 +99,7 @@
       <Variable x:TypeArguments="x:String" Name="vendor" />
       <Variable x:TypeArguments="x:String" Name="finalPrice" />
       <Variable x:TypeArguments="x:String" Name="userName" />
+      <Variable x:TypeArguments="x:String" Name="Link" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -79,7 +111,7 @@
         <OutArgument x:TypeArguments="x:String">[gameName]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Metroid Dread</InArgument>
+        <InArgument x:TypeArguments="x:String">[In_GameName]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -92,7 +124,7 @@
         <OutArgument x:TypeArguments="x:String">[finalPrice]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">54.99</InArgument>
+        <InArgument x:TypeArguments="x:String">[In_Price]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_3">
@@ -100,7 +132,7 @@
         <OutArgument x:TypeArguments="x:String">[videoGame]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Metroid Dread</InArgument>
+        <InArgument x:TypeArguments="x:String">[In_GameName]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_5">
@@ -108,7 +140,7 @@
         <OutArgument x:TypeArguments="x:String">[vendor]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Target</InArgument>
+        <InArgument x:TypeArguments="x:String">[In_store]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -116,7 +148,7 @@
         <OutArgument x:TypeArguments="x:String">[personName]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Test Testermen</InArgument>
+        <InArgument x:TypeArguments="x:String">[In_ClientName]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_6">
@@ -124,7 +156,15 @@
         <OutArgument x:TypeArguments="x:String">[userName]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">RPGabe</InArgument>
+        <InArgument x:TypeArguments="x:String">[In_username]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="590,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Link]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[In_link]</InArgument>
       </Assign.Value>
     </Assign>
     <p:WordApplicationScope sap2010:Annotation.AnnotationText="Make default location be on Desktop for Word and PDF document. wordAddress variable is a place holder for where ever we decide to save file, will just reference my desktop for now " DisplayName="Word Application Scope" FilePath="TemplateAndDocuments\P2Template.docx" sap:VirtualizedContainerService.HintSize="590,523" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
@@ -184,7 +224,7 @@
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace videoGame Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[videoGame]" ReplaceAll="True" Search="Name of Game here" />
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[vendor]" ReplaceAll="True" Search="Vendor Name" />
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[finalPrice]" ReplaceAll="True" Search="Price of Game" />
-              <p:WordInsertHyperlink Found="{x:Null}" Address="https://www.amazon.com/Metroid-Dread-Nintendo-Switch/dp/B097B1149G/ref=sr_1_2?crid=O83X1CVDHJV9&amp;keywords=metroid+dread&amp;qid=1636138119&amp;qsid=142-2449875-8110721&amp;s=videogames&amp;sprefix=metroid+drea%2Cvideogames%2C166&amp;sr=1-2&amp;sres=B097B1149G%2CB097BP5DLQ%2CB097BKT2TH%2CB097C44XPT%2CB09J46SGMZ%2CB09JVHKYK7%2CB0979ZHC5B%2CB097B15RT8%2CB09C7DTYLB%2CB09C7H2SN3%2CB097BL2S2W%2CB097BJT32N%2CB071X7V8NR%2CB097B2HQ5R%2CB09J2YQX6Q%2CB07H4SWQ91" DisplayName="Add Hyperlink to Document" sap:VirtualizedContainerService.HintSize="472,289" sap2010:WorkflowViewState.IdRef="WordInsertHyperlink_2" InsertRelativeTo="Text" Position="Replace" TextToDisplay="Buy the game here!" TextToSearchFor="Link To Website" />
+              <p:WordInsertHyperlink Found="{x:Null}" Address="[Link]" DisplayName="Add Hyperlink to Document" sap:VirtualizedContainerService.HintSize="472,289" sap2010:WorkflowViewState.IdRef="WordInsertHyperlink_2" InsertRelativeTo="Text" Position="Replace" TextToDisplay="Buy the game here!" TextToSearchFor="Link To Website" />
               <p:WordReplacePicture DisplayName="Replace Wanted Game Picture" sap:VirtualizedContainerService.HintSize="472,137" sap2010:WorkflowViewState.IdRef="WordReplacePicture_1" PictureAltText="img001" PicturePath="videoGameCover\Skyrim.jpg" />
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace NameGame1 Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="Metroid Samus Returns" ReplaceAll="True" Search="NameGame1" />
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace 2nd Game Recom. Text in Document" sap:VirtualizedContainerService.HintSize="472,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_5" Replace="Metroid Fusion" ReplaceAll="True" Search="NameGame2" />

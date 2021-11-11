@@ -5,15 +5,20 @@
     <x:Property Name="ClientID" Type="InOutArgument(x:Int32)" />
     <x:Property Name="APITable" Type="InArgument(sd:DataTable)" />
     <x:Property Name="BestBuyPrice" Type="InArgument(x:String)" />
-    <x:Property Name="DBcon" Type="InArgument(ui:DatabaseConnection)" />
+    <x:Property Name="DBcon" Type="InOutArgument(ui:DatabaseConnection)" />
+    <x:Property Name="RelPrice" Type="OutArgument(x:Double)" />
+    <x:Property Name="CurPrice" Type="OutArgument(x:Double)" />
+    <x:Property Name="StoreName" Type="OutArgument(x:String)" />
+    <x:Property Name="historicLow" Type="OutArgument(x:Double)" />
+    <x:Property Name="link" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1741,951</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1741,1004</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RunSelections_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="28">
+    <scg:List x:TypeArguments="x:String" Capacity="56">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -42,10 +47,12 @@
       <x:String>UiPath.Database</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Reflection</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -72,6 +79,8 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID3}" DisplayName="RunSelections" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -90,13 +99,9 @@
           <TryCatch.Try>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke APIcalls workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="sequence_folder\APIcalls.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="GameTable">
-                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="APITable" />
-                </OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="GameTable">[APITable]</OutArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="test" />
-                <InArgument x:TypeArguments="x:String" x:Key="GametoFind">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GameName" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="GametoFind">[GameName]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </TryCatch.Try>
@@ -145,13 +150,204 @@
         <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">116.6,241.5 116.6,271.5 160,271.5 160,299.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">116.6,241.5 116.6,276.05 380,276.05</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">31</x:Int32>
-              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" DisplayName="State" sap:VirtualizedContainerService.HintSize="522,744" sap2010:WorkflowViewState.IdRef="State_4">
+            <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="675,1112" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
+              <State.Entry>
+                <Sequence sap:VirtualizedContainerService.HintSize="629,999" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="587,907" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                    <TryCatch.Try>
+                      <Sequence sap:VirtualizedContainerService.HintSize="549,680" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[APITable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="507,436" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                          <ui:ForEachRow.Body>
+                            <ActivityAction x:TypeArguments="sd:DataRow">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="473,316" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                  <ui:MultipleAssign.AssignOperations>
+                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:Double">[RelPrice]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:Double">[cdbl(CurrentRow("pricenew"))]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:Double">[CurPrice]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:Double">[cdbl(CurrentRow("pricenow"))]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[StoreName]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[CurrentRow("store").ToString]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:Double">[historicLow]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:Double">[cdbl(CurrentRow("lowest"))]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                        <ui:AssignOperation.To>
+                                          <OutArgument x:TypeArguments="x:String">[link]</OutArgument>
+                                        </ui:AssignOperation.To>
+                                        <ui:AssignOperation.Value>
+                                          <InArgument x:TypeArguments="x:String">[CurrentRow("link").ToString]</InArgument>
+                                        </ui:AssignOperation.Value>
+                                      </ui:AssignOperation>
+                                    </scg:List>
+                                  </ui:MultipleAssign.AssignOperations>
+                                </ui:MultipleAssign>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEachRow.Body>
+                        </ui:ForEachRow>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke pdfAndEmailProcess workflow" sap:VirtualizedContainerService.HintSize="507,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sequence_folder\pdfAndEmailProcess.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:Double" x:Key="In_CurrPrice">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="CurPrice" />
+                            </InArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="In_GameName">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="GameName" />
+                            </InOutArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="In_RelPrice">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="RelPrice" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="In_link">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="link" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="In_Store">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StoreName" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="SuggestTable" />
+                            <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="DBC">
+                              <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="DBcon" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="ClientID">
+                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="ClientID" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="HistoricLow">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="historicLow" />
+                            </InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="553,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:InvalidOperationException">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
+                          </ActivityAction.Argument>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Game not found on store sites. Please try entering in the title correctly&quot;]" />
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">380,242.5</av:Point>
+                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </State>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <State x:Name="__ReferenceID0" DisplayName="State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_2">
+      <State.Entry>
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch.Try>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke selectBestBuy workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="sequence_folder\selectBestBuy.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="currentGame">[GameName]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="currPlatform">[Platform]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="getPrice">[BestBuyPrice]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="getFullTitle">Final Fantasy VII REMAKE Intergrade - PlayStation 5</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Failure" />
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">223,409.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Exit>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[BestBuyPrice]" />
+      </State.Exit>
+      <State.Transitions>
+        <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">357,433.9 387,433.9 387,333.05 227,333.05</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">28</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">40</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <State x:Name="__ReferenceID2" DisplayName="State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_4">
               <State.Entry>
                 <Sequence sap:VirtualizedContainerService.HintSize="476,384" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
@@ -165,13 +361,9 @@
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem" />
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
-                          <InArgument x:TypeArguments="x:String" x:Key="GameName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GameName" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="GameName">[GameName]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="IN_Platform" />
-                          <OutArgument x:TypeArguments="x:String" x:Key="OUT_TargetPrice">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="TargetPrice" />
-                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="OUT_TargetPrice">[TargetPrice]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </TryCatch.Try>
@@ -214,81 +406,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID0" DisplayName="State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_2">
-                      <State.Entry>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                          <TryCatch.Try>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke selectBestBuy workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="sequence_folder\selectBestBuy.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="currentGame">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GameName" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="currPlatform">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Platform" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="getPrice">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="BestBuyPrice" />
-                                </OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="getFullTitle">
-                                  <Literal x:TypeArguments="x:String">Final Fantasy VII REMAKE Intergrade - PlayStation 5</Literal>
-                                </InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
-                          </TryCatch.Try>
-                          <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ActivityAction x:TypeArguments="s:Exception">
-                                <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                </ActivityAction.Argument>
-                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Failure" />
-                              </ActivityAction>
-                            </Catch>
-                          </TryCatch.Catches>
-                        </TryCatch>
-                      </State.Entry>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">223,409.5</av:Point>
-                          <av:Size x:Key="ShapeSize">134,61</av:Size>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <State.Exit>
-                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[BestBuyPrice]" />
-                      </State.Exit>
-                      <State.Transitions>
-                        <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_2">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:PointCollection x:Key="ConnectorLocation">357,433.9 453.7,433.9 453.7,303.5</av:PointCollection>
-                              <x:Int32 x:Key="SrcConnectionPointIndex">28</x:Int32>
-                              <x:Int32 x:Key="DestConnectionPointIndex">43</x:Int32>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Transition.To>
-                            <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
-                              <State.Entry>
-                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;end selectors&quot;]" />
-                              </State.Entry>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">380,242.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </State>
-                          </Transition.To>
-                        </Transition>
-                      </State.Transitions>
-                    </State>
+                    <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                 </Transition>
               </State.Transitions>
@@ -297,7 +415,6 @@
         </Transition>
       </State.Transitions>
     </State>
-    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
     <StateMachine.Variables>
