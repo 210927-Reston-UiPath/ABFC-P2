@@ -11,11 +11,12 @@
     <x:Property Name="StoreName" Type="OutArgument(x:String)" />
     <x:Property Name="historicLow" Type="OutArgument(x:Double)" />
     <x:Property Name="link" Type="OutArgument(x:String)" />
+    <x:Property Name="INOUT_CNS" Type="InOutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1741,1004</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,980</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RunSelections_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -99,9 +100,16 @@
           <TryCatch.Try>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke APIcalls workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="sequence_folder\APIcalls.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="GameTable">[APITable]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="GameTable">
+                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="APITable" />
+                </OutArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="test" />
-                <InArgument x:TypeArguments="x:String" x:Key="GametoFind">[GameName]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="GametoFind">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GameName" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="CNS">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="INOUT_CNS" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </TryCatch.Try>
@@ -236,22 +244,22 @@
                         </ui:ForEachRow>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke pdfAndEmailProcess workflow" sap:VirtualizedContainerService.HintSize="507,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sequence_folder\pdfAndEmailProcess.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:Double" x:Key="In_CurrPrice">
-                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="CurPrice" />
-                            </InArgument>
+                            <InOutArgument x:TypeArguments="x:Double" x:Key="In_CurrPrice">
+                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="CurPrice" />
+                            </InOutArgument>
                             <InOutArgument x:TypeArguments="x:String" x:Key="In_GameName">
                               <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="GameName" />
                             </InOutArgument>
-                            <InArgument x:TypeArguments="x:Double" x:Key="In_RelPrice">
-                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="RelPrice" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="In_link">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="link" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="In_Store">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StoreName" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="SuggestTable" />
+                            <InOutArgument x:TypeArguments="x:Double" x:Key="In_RelPrice">
+                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="RelPrice" />
+                            </InOutArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="In_link">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="link" />
+                            </InOutArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="In_Store">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StoreName" />
+                            </InOutArgument>
+                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SuggestTable" />
                             <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="DBC">
                               <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="DBcon" />
                             </InArgument>
@@ -261,6 +269,13 @@
                             <InArgument x:TypeArguments="x:Double" x:Key="HistoricLow">
                               <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="historicLow" />
                             </InArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="ClientName" />
+                            <InOutArgument x:TypeArguments="x:String" x:Key="ClientEmail" />
+                            <InOutArgument x:TypeArguments="x:String" x:Key="ClientUserName" />
+                            <InArgument x:TypeArguments="x:String" x:Key="recGame1" />
+                            <InOutArgument x:TypeArguments="x:String" x:Key="CNS">
+                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="INOUT_CNS" />
+                            </InOutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>

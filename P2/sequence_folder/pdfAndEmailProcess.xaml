@@ -13,6 +13,7 @@
     <x:Property Name="ClientEmail" Type="InOutArgument(x:String)" />
     <x:Property Name="ClientUserName" Type="InOutArgument(x:String)" />
     <x:Property Name="recGame1" Type="InArgument(x:String)" />
+    <x:Property Name="CNS" Type="InOutArgument(x:String)" />
   </x:Members>
   <this:pdfAndEmailProcess.recGame1>
     <InArgument x:TypeArguments="x:String" />
@@ -20,7 +21,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1418,870</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,737</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>pdfAndEmailProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -124,9 +125,9 @@
         <av:PointCollection x:Key="ConnectorLocation">306,77.5 306,107.5 251.75,107.5 251.75,139</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Get variables for the specific order of the client searching the game, need to make sure that we transition when items are assigned&#xA;" DisplayName="Get Info State" sap:VirtualizedContainerService.HintSize="435,122" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Get variables for the specific order of the client searching the game, need to make sure that we transition when items are assigned&#xA;" DisplayName="Get Info State" sap:VirtualizedContainerService.HintSize="595,2841" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
-        <Sequence sap:VirtualizedContainerService.HintSize="549,2565" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="549,2424" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="temp" />
             <Variable x:TypeArguments="x:String" Name="cID" />
@@ -256,7 +257,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ClientInfo]" DisplayName="Execute Query" ExistingDbConnection="[DBC]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;select clientname, clientemail, username from clients where clientID=&quot;+cID+&quot;;&quot;]">
+              <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[ClientInfo]" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="System.Data.Odbc" Sql="[&quot;select clientname, clientemail, username from clients where clientID=&quot;+cID+&quot;;&quot;]" ConnectionString="[CNS]">
                 <ui:ExecuteQuery.Parameters>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:ExecuteQuery.Parameters>
@@ -357,7 +358,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[DBC]" sap:VirtualizedContainerService.HintSize="507,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;update games set gameprice=&quot;+curPrice+&quot;, apiprice=&quot;+hislow+&quot;, bestvendor='&quot;+In_Store+&quot;', link='&quot;+In_link+&quot;' where gamename='&quot;+In_GameName+&quot;';&quot;]">
+          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" sap:VirtualizedContainerService.HintSize="507,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" ProviderName="System.Data.Odbc" Sql="[&quot;update games set gameprice=&quot;+curPrice+&quot;, apiprice=&quot;+hislow+&quot;, bestvendor='&quot;+In_Store+&quot;', link='&quot;+In_link+&quot;' where gamename='&quot;+In_GameName+&quot;';&quot;]" ConnectionString="[CNS]">
             <ui:ExecuteNonQuery.Parameters>
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
             </ui:ExecuteNonQuery.Parameters>
@@ -389,8 +390,15 @@
           </Assign>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke RecommendationGEN workflow" sap:VirtualizedContainerService.HintSize="507,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="sequence_folder\RecommendationGEN.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="In_GameName">[In_GameName]</InArgument>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="Out_SugTable">[SuggestTable]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="In_GameName">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_GameName" />
+              </InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="Out_SugTable">
+                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="SuggestTable" />
+              </OutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="InOUT_CNS">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="CNS" />
+              </InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="507,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
@@ -997,7 +1005,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="507,192" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="507,51" sap2010:WorkflowViewState.IdRef="CommentOut_13">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_35">
                 <sap:WorkflowViewStateService.ViewState>
@@ -1008,6 +1016,12 @@
                 <ui:DatabaseDisconnect DatabaseConnection="[DBC]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
               </Sequence>
             </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
           <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="507,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="------Done------" />
         </Sequence>
@@ -1035,7 +1049,7 @@
             <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dataIsThere = True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
           </Transition.Condition>
           <Transition.To>
-            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Here we will add the information from the database to the word document, we also saved as a pdf file" DisplayName="Add Info State" sap:VirtualizedContainerService.HintSize="526,1034" sap2010:WorkflowViewState.IdRef="State_2">
+            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Here we will add the information from the database to the word document, we also saved as a pdf file" DisplayName="Add Info State" sap:VirtualizedContainerService.HintSize="437,148" sap2010:WorkflowViewState.IdRef="State_2">
               <State.Entry>
                 <Sequence sap:VirtualizedContainerService.HintSize="480,632" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1056,32 +1070,16 @@
                     <TryCatch.Try>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke makePDF workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="sequence_folder\makePDF.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_GameName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_GameName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_Price">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_CurrPrice.ToString" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_store">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Store" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_ClientName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ClientName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_username">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ClientUserName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_link">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_link" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_suggestionTable">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="SuggestTable" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_GameName">[In_GameName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_Price">[In_CurrPrice.ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_store">[In_Store]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_ClientName">[ClientName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_username">[ClientUserName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_link">[In_link]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_suggestionTable">[SuggestTable]</InArgument>
                           <InOutArgument x:TypeArguments="x:String" x:Key="out_finalPrice" />
                           <InArgument x:TypeArguments="x:String" x:Key="out_price" />
-                          <InArgument x:TypeArguments="x:String" x:Key="in_histlow">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="HistoricLow.ToString" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_histlow">[HistoricLow.ToString]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </TryCatch.Try>

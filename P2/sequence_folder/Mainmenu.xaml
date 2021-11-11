@@ -3,6 +3,7 @@
     <x:Property Name="out_GameName" Type="InArgument(x:String)" />
     <x:Property Name="Out_Platform" Type="InArgument(x:String)" />
     <x:Property Name="inout_clientID" Type="InArgument(x:Int32)" />
+    <x:Property Name="CNS" Type="InOutArgument(x:String)" />
   </x:Members>
   <this:StateMachine.out_GameName>
     <InArgument x:TypeArguments="x:String" />
@@ -16,7 +17,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1741,951</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,980</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>StateMachine_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -401,14 +402,14 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID3" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
                       <State.Entry>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,212.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,238" sap2010:WorkflowViewState.IdRef="Sequence_65">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:DatabaseDisconnect DatabaseConnection="[dbc]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
-                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Process finished.&quot;]" />
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Process finished.&quot;]" />
                         </Sequence>
                       </State.Entry>
                       <sap:WorkflowViewStateService.ViewState>
@@ -1131,9 +1132,15 @@
                                           </InOutArgument>
                                           <InArgument x:TypeArguments="sd:DataTable" x:Key="APITable" />
                                           <InArgument x:TypeArguments="x:String" x:Key="BestBuyPrice" />
-                                          <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="DBcon">
-                                            <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="dbc" />
-                                          </InArgument>
+                                          <InOutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="DBcon" />
+                                          <OutArgument x:TypeArguments="x:Double" x:Key="RelPrice" />
+                                          <OutArgument x:TypeArguments="x:Double" x:Key="CurPrice" />
+                                          <OutArgument x:TypeArguments="x:String" x:Key="StoreName" />
+                                          <OutArgument x:TypeArguments="x:Double" x:Key="historicLow" />
+                                          <OutArgument x:TypeArguments="x:String" x:Key="link" />
+                                          <InOutArgument x:TypeArguments="x:String" x:Key="INOUT_CNS">
+                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="CNS" />
+                                          </InOutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
@@ -1185,7 +1192,7 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID6" DisplayName="Pull history" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_10">
                       <State.Entry>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,340" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,366" sap2010:WorkflowViewState.IdRef="Sequence_100">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="testString2" />
                             <Variable x:TypeArguments="sd:DataTable" Name="queryDT7" />
@@ -1195,13 +1202,13 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT7]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_53" Sql="[&quot;Select clients.username,games.gamename From wishlist inner Join games On wishlist.wishgameID = games.gamelineID inner Join clients On wishlist.wishclientID = clients.clientID Where clients.username = '&quot;+username+&quot;'&quot;]">
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT7]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_53" Sql="[&quot;Select distinct clients.username,games.gamename From wishlist inner Join games On wishlist.wishgameID = games.gamelineID inner Join clients On wishlist.wishclientID = clients.clientID Where clients.username = '&quot;+username+&quot;'&quot;]">
                             <ui:ExecuteQuery.Parameters>
                               <scg:Dictionary x:TypeArguments="x:String, Argument" />
                             </ui:ExecuteQuery.Parameters>
                           </ui:ExecuteQuery>
                           <ui:OutputDataTable DataTable="[queryDT7]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[testString2]" />
-                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[testString2]" />
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[testString2]" />
                         </Sequence>
                       </State.Entry>
                       <sap:WorkflowViewStateService.ViewState>
@@ -1301,7 +1308,7 @@
                                           <InArgument x:TypeArguments="x:String">[username2]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT7]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_57" Sql="[&quot;Select clients.username,games.gamename From wishlist inner Join games On wishlist.wishgameID = games.gamelineID inner Join clients On wishlist.wishclientID = clients.clientID Where clients.username = '&quot;+username2+&quot;'&quot;]">
+                                      <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT7]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_57" Sql="[&quot;Select distinct clients.username,games.gamename From wishlist inner Join games On wishlist.wishgameID = games.gamelineID inner Join clients On wishlist.wishclientID = clients.clientID Where clients.username = '&quot;+username2+&quot;'&quot;]">
                                         <ui:ExecuteQuery.Parameters>
                                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                         </ui:ExecuteQuery.Parameters>
@@ -1376,7 +1383,7 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID8" DisplayName="View devices" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_12">
                       <State.Entry>
-                        <Sequence sap:VirtualizedContainerService.HintSize="798,586" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                        <Sequence sap:VirtualizedContainerService.HintSize="797,606" sap2010:WorkflowViewState.IdRef="Sequence_121">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="testString" />
                           </Sequence.Variables>
@@ -1385,24 +1392,24 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="756,87.3333333333333" sap2010:WorkflowViewState.IdRef="ExecuteQuery_58" Sql="[&quot;select devicename from device inner join clients  on device.devclientid = clients.clientID where clients.username = '&quot;+username+&quot;'&quot;]">
+                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[queryDT5]" DisplayName="Execute Query" ExistingDbConnection="[dbc]" sap:VirtualizedContainerService.HintSize="755,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_58" Sql="[&quot;select devicename from device inner join clients  on device.devclientid = clients.clientID where clients.username = '&quot;+username+&quot;'&quot;]">
                             <ui:ExecuteQuery.Parameters>
                               <scg:Dictionary x:TypeArguments="x:String, Argument" />
                             </ui:ExecuteQuery.Parameters>
                           </ui:ExecuteQuery>
-                          <If Condition="[queryDT5 is Nothing or queryDT5.rows.count = 0]" sap:VirtualizedContainerService.HintSize="756,366.666666666667" sap2010:WorkflowViewState.IdRef="If_52">
+                          <If Condition="[queryDT5 is Nothing or queryDT5.rows.count = 0]" sap:VirtualizedContainerService.HintSize="755,386" sap2010:WorkflowViewState.IdRef="If_52">
                             <If.Then>
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_18" Text="[&quot;User does not have any devices added.&quot;]" />
+                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_18" Text="[&quot;User does not have any devices added.&quot;]" />
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376,212.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,238" sap2010:WorkflowViewState.IdRef="Sequence_122">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:OutputDataTable DataTable="[queryDT5]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_8" Text="[testString]" />
-                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[testString]" />
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[testString]" />
                               </Sequence>
                             </If.Else>
                           </If>
@@ -1967,7 +1974,19 @@
     <x:Reference>__ReferenceID0</x:Reference>
     <State x:Name="__ReferenceID11" DisplayName="Establish SQL connection" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_7">
       <State.Entry>
-        <ui:DatabaseConnect DatabaseConnection="[dbc]" DisplayName="Connect to SQL Database" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=p2;uid=xxjcjrku;pwd=aBnV7vLHBhCD2hbYTcB3hwWOVV6IbAJr" />
+        <Sequence sap:VirtualizedContainerService.HintSize="486,328" sap2010:WorkflowViewState.IdRef="Sequence_156">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="CNS" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[CNS]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <ui:DatabaseConnect DatabaseConnection="[dbc]" DisplayName="Connect to SQL Database" sap:VirtualizedContainerService.HintSize="444,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="[CNS]" />
+        </Sequence>
       </State.Entry>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

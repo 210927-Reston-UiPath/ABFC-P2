@@ -38,7 +38,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1636,7201</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,7201</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>makePDF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -114,7 +114,11 @@
       <Variable x:TypeArguments="x:String" Name="gameName" />
       <Variable x:TypeArguments="x:String" Name="personName" />
       <Variable x:TypeArguments="x:String" Name="videoGame" />
-      <Variable x:TypeArguments="x:String" Name="vendor" />
+      <Variable x:TypeArguments="x:String" Name="vendor">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_store" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="finalPrice" />
       <Variable x:TypeArguments="x:String" Name="userName" />
       <Variable x:TypeArguments="x:String" Name="Link" />
@@ -418,7 +422,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="512,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_13" Replace="[userName]" ReplaceAll="True" Search="username" />
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace videoGame Text in Document" sap:VirtualizedContainerService.HintSize="512,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[videoGame]" ReplaceAll="True" Search="videogame" />
-              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="512,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[vendor]" ReplaceAll="True" Search="Vendor Name" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="512,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[vendor +&quot;:&quot;]" ReplaceAll="True" Search="vendor:" />
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="512,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[finalPrice]" ReplaceAll="True" Search="price" />
               <p:WordInsertHyperlink Found="{x:Null}" Address="[Link]" DisplayName="Add Hyperlink to Document" sap:VirtualizedContainerService.HintSize="512,289" sap2010:WorkflowViewState.IdRef="WordInsertHyperlink_2" InsertRelativeTo="Text" Position="Replace" TextToDisplay="Buy the game NOW!!!" TextToSearchFor="LinkToGame" />
               <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="512,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_14" Replace="[historicalLow]" ReplaceAll="True" Search="historicalLow" />

@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="In_GameName" Type="InArgument(x:String)" />
     <x:Property Name="Out_SugTable" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="InOUT_CNS" Type="InOutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1418,2517</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,2111</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RecommendationGEN_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -71,7 +72,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RecommendationGEN" sap:VirtualizedContainerService.HintSize="480,2412" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RecommendationGEN" sap:VirtualizedContainerService.HintSize="480,2006" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="GamesDB" />
       <Variable x:TypeArguments="sd:DataTable" Name="Suggestions" />
@@ -100,7 +101,12 @@
       <TryCatch.Try>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateGenre workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="sequence_folder\UpdateGenre.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_wantedgame">[WantedGame]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_wantedgame">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="WantedGame" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="In_CNS">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InOUT_CNS" />
+            </InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
@@ -165,7 +171,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:DatabaseConnect DatabaseConnection="[GamesDB]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="438,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=P2" />
+    <ui:DatabaseConnect DatabaseConnection="[GamesDB]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="438,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="[InOUT_CNS]" />
     <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[Genre]" DisplayName="Execute Query" ExistingDbConnection="[GamesDB]" sap:VirtualizedContainerService.HintSize="438,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;select gamegenre from games where gamename='&quot;+WantedGame+&quot;';&quot;]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -188,7 +194,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,254" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
@@ -199,6 +205,12 @@
           <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[GenreKind]" />
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
     <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[GameCONDT]" DisplayName="Execute Query" ExistingDbConnection="[GamesDB]" sap:VirtualizedContainerService.HintSize="438,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="[&quot;select consoleName from GenreMatcher where productName like '&quot;+WantedGame+&quot;' and consoleName not like 'PAL%' and productName not like '%&amp;%' and consoleName not like 'Strategy Guide' and genre not like 'Accessories' and genre not like 'Systems';&quot;]">
       <ui:ExecuteQuery.Parameters>
@@ -222,7 +234,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,254" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
@@ -233,6 +245,12 @@
           <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[Console]" />
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
     <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[Suggestions]" DisplayName="Execute Query" ExistingDbConnection="[GamesDB]" sap:VirtualizedContainerService.HintSize="438,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="[&quot;Select productName,genre,consoleName From GenreMatcher Where productName Not Like '&quot;+WantedGame+&quot;' and consoleName not like 'PAL%' and productName not like '%&amp;%' And consoleName Not Like 'Strategy Guide' and consoleName like '&quot;+Console+&quot;' and genre not like 'Accessories' and genre not like 'Systems' And genre Like '&quot;+GenreKind+&quot;' order by random() limit 3;&quot;]">
       <ui:ExecuteQuery.Parameters>
