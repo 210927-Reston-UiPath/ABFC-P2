@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1729,2111</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,2281</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RecommendationGEN_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -72,7 +72,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RecommendationGEN" sap:VirtualizedContainerService.HintSize="480,2006" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RecommendationGEN" sap:VirtualizedContainerService.HintSize="480,2176" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="GamesDB" />
       <Variable x:TypeArguments="sd:DataTable" Name="Suggestions" />
@@ -101,12 +101,8 @@
       <TryCatch.Try>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateGenre workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="sequence_folder\UpdateGenre.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_wantedgame">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="WantedGame" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="In_CNS">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InOUT_CNS" />
-            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_wantedgame">[WantedGame]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="In_CNS">[InOUT_CNS]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
@@ -266,7 +262,18 @@
       </Assign.Value>
     </Assign>
     <ui:OutputDataTable DataTable="[Suggestions]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[Test]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="438,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[Test]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,254" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[Test]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
     <ui:DatabaseDisconnect DatabaseConnection="[GamesDB]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
   </Sequence>
 </Activity>

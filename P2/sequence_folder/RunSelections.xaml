@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1729,980</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,988</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RunSelections_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -94,22 +94,16 @@
         <av:PointCollection x:Key="ConnectorLocation">263,77.5 263,107.5 130,107.5 130,169.5</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID3" DisplayName="State" sap:VirtualizedContainerService.HintSize="134,72" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID3" DisplayName="State" sap:VirtualizedContainerService.HintSize="524,997" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
         <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke APIcalls workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="sequence_folder\APIcalls.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="GameTable">
-                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="APITable" />
-                </OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="GameTable">[APITable]</OutArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="test" />
-                <InArgument x:TypeArguments="x:String" x:Key="GametoFind">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GameName" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="CNS">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="INOUT_CNS" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="GametoFind">[GameName]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="CNS">[INOUT_CNS]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </TryCatch.Try>
@@ -141,7 +135,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <State.Exit>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,238" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap:VirtualizedContainerService.HintSize="478,408" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="test" />
           </Sequence.Variables>
@@ -150,8 +144,19 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OutputDataTable DataTable="[APITable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[test]" />
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[test]" />
+          <ui:OutputDataTable DataTable="[APITable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[test]" />
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,254" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[test]" />
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
         </Sequence>
       </State.Exit>
       <State.Transitions>
@@ -164,7 +169,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="675,1112" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
+            <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
               <State.Entry>
                 <Sequence sap:VirtualizedContainerService.HintSize="629,999" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -244,38 +249,20 @@
                         </ui:ForEachRow>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke pdfAndEmailProcess workflow" sap:VirtualizedContainerService.HintSize="507,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sequence_folder\pdfAndEmailProcess.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InOutArgument x:TypeArguments="x:Double" x:Key="In_CurrPrice">
-                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="CurPrice" />
-                            </InOutArgument>
-                            <InOutArgument x:TypeArguments="x:String" x:Key="In_GameName">
-                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="GameName" />
-                            </InOutArgument>
-                            <InOutArgument x:TypeArguments="x:Double" x:Key="In_RelPrice">
-                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="RelPrice" />
-                            </InOutArgument>
-                            <InOutArgument x:TypeArguments="x:String" x:Key="In_link">
-                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="link" />
-                            </InOutArgument>
-                            <InOutArgument x:TypeArguments="x:String" x:Key="In_Store">
-                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StoreName" />
-                            </InOutArgument>
+                            <InOutArgument x:TypeArguments="x:Double" x:Key="In_CurrPrice">[CurPrice]</InOutArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="In_GameName">[GameName]</InOutArgument>
+                            <InOutArgument x:TypeArguments="x:Double" x:Key="In_RelPrice">[RelPrice]</InOutArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="In_link">[link]</InOutArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="In_Store">[StoreName]</InOutArgument>
                             <InOutArgument x:TypeArguments="sd:DataTable" x:Key="SuggestTable" />
-                            <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="DBC">
-                              <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="DBcon" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="ClientID">
-                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="ClientID" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Double" x:Key="HistoricLow">
-                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="historicLow" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="DBC">[DBcon]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="ClientID">[ClientID]</InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="HistoricLow">[historicLow]</InArgument>
                             <InOutArgument x:TypeArguments="x:String" x:Key="ClientName" />
                             <InOutArgument x:TypeArguments="x:String" x:Key="ClientEmail" />
                             <InOutArgument x:TypeArguments="x:String" x:Key="ClientUserName" />
                             <InArgument x:TypeArguments="x:String" x:Key="recGame1" />
-                            <InOutArgument x:TypeArguments="x:String" x:Key="CNS">
-                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="INOUT_CNS" />
-                            </InOutArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="CNS">[INOUT_CNS]</InOutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
