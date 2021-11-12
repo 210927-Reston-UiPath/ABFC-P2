@@ -21,7 +21,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1729,737</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1729,988</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>pdfAndEmailProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -125,7 +125,7 @@
         <av:PointCollection x:Key="ConnectorLocation">306,77.5 306,107.5 251.75,107.5 251.75,139</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Get variables for the specific order of the client searching the game, need to make sure that we transition when items are assigned&#xA;" DisplayName="Get Info State" sap:VirtualizedContainerService.HintSize="595,2841" sap2010:WorkflowViewState.IdRef="State_1">
+    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Get variables for the specific order of the client searching the game, need to make sure that we transition when items are assigned&#xA;" DisplayName="Get Info State" sap:VirtualizedContainerService.HintSize="435,122" sap2010:WorkflowViewState.IdRef="State_1">
       <State.Entry>
         <Sequence sap:VirtualizedContainerService.HintSize="549,2424" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
@@ -390,15 +390,9 @@
           </Assign>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke RecommendationGEN workflow" sap:VirtualizedContainerService.HintSize="507,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="sequence_folder\RecommendationGEN.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="In_GameName">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_GameName" />
-              </InArgument>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="Out_SugTable">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="SuggestTable" />
-              </OutArgument>
-              <InOutArgument x:TypeArguments="x:String" x:Key="InOUT_CNS">
-                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="CNS" />
-              </InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="In_GameName">[In_GameName]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="Out_SugTable">[SuggestTable]</OutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="InOUT_CNS">[CNS]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="507,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
@@ -1147,7 +1141,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Here we will send an email to the users in the list with the pdf made" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="438,184" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
+                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Here we will send an email to the users in the list with the pdf made" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="510,1331" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
                       <State.Entry>
                         <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="464,1187" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                           <TryCatch.Try>
@@ -1203,7 +1197,7 @@
                                   <InArgument x:TypeArguments="x:String">[readInTXT.Replace("gamePrice", in_price.ToString)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[readInTXT]" DisplayName="Send SMTP Mail Message" Email="spamemailemailers@gmail.com" EnableSSL="True" From="spamemailemailers@gmail.com" sap:VirtualizedContainerService.HintSize="384,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Name="ABFC Organization" Password="ComeUpWithSom3" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Video Game Summary" To="spamemailemailers@gmail.com">
+                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[readInTXT]" DisplayName="Send SMTP Mail Message" Email="spamemailemailers@gmail.com" EnableSSL="True" From="spamemailemailers@gmail.com" sap:VirtualizedContainerService.HintSize="384,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Name="ABFC Organization" Password="ComeUpWithSom3" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Video Game Summary" To="[ClientEmail]">
                                 <ui:SendMail.Files>
                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                     <InArgument x:TypeArguments="x:String">TemplateAndDocuments\RPGabe.pdf</InArgument>
