@@ -1,0 +1,11 @@
+<h1>Hello userName!</h1>
+<h2>Thank you for using our Application!</h2>
+<p>We found the perfect place to buy your game, and it's at vendorName.com</p>
+<blockquote>
+<p><span style="text-decoration: underline;">Search Summary:</span></p>
+<ul>
+<li>gameName found for a price of gamePrice!</li>
+</ul>
+</blockquote>
+<p>&nbsp;</p>
+<p>All the information can be found in your <strong>personal</strong> <strong>pdf</strong> below:</p>

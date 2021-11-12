@@ -15,29 +15,27 @@ User should be alerted if the game they want will run or not run on the hardware
 A user is looking for a game they want on sale across multiple platforms that they own (PC, PS4, Xbox One). The User should be able to enter in the consoles they own and the game they want, and get provided with the link to the game they want on for the best price that is available across all consoles they own.
 
 ## MVP
-- [ ] Robot should be able to pull information from stores and store that to a DataBase.
-- [ ] Robot should allow you to select the platform you wish to play on and only provide data for that platform.
-- [ ] Robot should be able to take in a specific Wishlist and give a report on the games you want.
-- [ ] Robot should be able to make a decision on the quality of the price based on historical sale data from www.pricecharting.com.
-- [ ] Robot should be able to email you a PDF with the information requested.
-- [ ] For individual games on a client's wishlist, the robot should be able to also give recomendations of games similar to that title.
+- [X] Robot should be able to pull information from stores and store that to a DataBase.
+- [X] Robot should allow you to select the platform you wish to play on and only provide data for that platform.
+- [X] Robot should be able to display a specific Wishlist on the games you want.
+- [X] Robot should be able to make a decision on the quality of the price based on historical sale data from www.pricecharting.com.
+- [X] Robot should be able to email you a PDF with the information requested.
+- [X] For individual games on a client's wishlist, the robot should be able to also give recomendations of games similar to that title.
 
 ## Stretch Goals
 - [ ] Robot should be able to look for if the game has a streaming option or a renting option.
 - [ ] Robot should be able to look for if there is a used copy that is cheaper than a full price copy.
-- [ ] Based on your wishlist the robot should be able to give you more suggestions on what you might like.
+- [X] Based on your wishlist the robot should be able to give you more suggestions on what you might like.
 - [ ] Given the Specs of your hardware or the devices you own, there should a warning or a notice if you can run the game or if you need specific hardware to play the game.
 - [ ] Robot should be able to determine the best price based upon the devices the user has and give them the cheapest option based upon their owned devices.
 
 ## Constraints
-- [ ] Robot will shop from Amazon, Steam, BestBuy, Humble Bundle.
-- [ ] Robot will use sales data provided by www.pricecharting.com to make the purchase rating, if the data for the game is avalible. (Some titles might not have data or may not be available to the market yet.)
-- [ ] Database must be 3NF.
-- [ ] Orchestrator must be utilized.
-- [ ] ReFramework must be utilized.
-- [ ] Must have 3rd party API/Library integrated.
-- [ ] Automations should have exception handling enabled.
+- [X] Robot will shop from Amazon, Steam, GOG, Humble Bundle, Epic Game Store.
+- [X] Robot will use sales data provided by www.pricecharting.com to make the purchase rating, if the data for the game is avalible. (Some titles might not have data or may not be available to the market yet.)
+- [X] Robot Uses isthereanydeal.com API for price checking and item picking and sale data.
+- [X] Database must be 3NF.
+- [X] Orchestrator must be utilized.
+- [X] ReFramework must be utilized.
+- [X] Must have 3rd party API/Library integrated.
+- [X] Automations should have exception handling enabled.
 
-
-## Current Flowchart
-![Statemachine](https://user-images.githubusercontent.com/55204654/139494965-e969758f-8157-4145-a8cf-154b9addeaf9.PNG)
