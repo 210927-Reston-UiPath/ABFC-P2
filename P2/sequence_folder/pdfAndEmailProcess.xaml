@@ -1141,11 +1141,11 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Here we will send an email to the users in the list with the pdf made" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="510,1483" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
+                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Here we will send an email to the users in the list with the pdf made" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="510,1545" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
                       <State.Entry>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="464,1339" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="464,1401" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                           <TryCatch.Try>
-                            <Sequence sap:VirtualizedContainerService.HintSize="426,1112" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <Sequence sap:VirtualizedContainerService.HintSize="426,1174" sap2010:WorkflowViewState.IdRef="Sequence_11">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="gameName" />
                                 <Variable x:TypeArguments="x:String" Name="price" />
@@ -1200,13 +1200,12 @@
                               <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[readInTXT]" DisplayName="Send SMTP Mail Message" Email="spamemailemailers@gmail.com" EnableSSL="True" From="spamemailemailers@gmail.com" sap:VirtualizedContainerService.HintSize="384,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Name="ABFC Organization" Password="ComeUpWithSom3" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Video Game Summary" To="[ClientEmail]">
                                 <ui:SendMail.Files>
                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                    <InArgument x:TypeArguments="x:String">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;TemplateAndDocuments\&quot;+ClientUserName+&quot;.pdf&quot;" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String">["TemplateAndDocuments\"+ClientUserName+".pdf"]</InArgument>
                                   </scg:List>
                                 </ui:SendMail.Files>
                               </ui:SendMail>
                               <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="384,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="End of Process" />
+                              <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="384,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
