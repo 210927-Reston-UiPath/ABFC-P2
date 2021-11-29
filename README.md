@@ -39,3 +39,10 @@ A user is looking for a game they want on sale across multiple platforms that th
 - [X] Must have 3rd party API/Library integrated.
 - [X] Automations should have exception handling enabled.
 
+## Tech Stack
+  -UiPath Studio
+  -PostgreSQL
+  -UiPath Orchestrator
+  -UIPath Assistant
+  -isthereanydeal.com API
+  -pricecharting.com API
